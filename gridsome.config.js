@@ -10,6 +10,7 @@ const siteDescription = "a blog";
 const logoLocation = "./static/images/Logo.svg" 
 
 const createRemarkContentType = require('./gridsome/createRemarkContentType')
+const remarkPlugins = require('./gridsome/remarkPlugins')
 
 module.exports = {
   metadata:{
@@ -29,7 +30,7 @@ module.exports = {
     createRemarkContentType('Post'),
     createRemarkContentType('MarkPage',{ baseDir: './content/pages'}),
     require('./gridsome/feed')(siteName, siteDescription),
-    ...require('./gridsome/other_plugins')()
+    ...require('./gridsome/gridsomePlugins')()
   ],
   ...require('./gridsome/icons')(logoLocation),
   chainWebpack: require('./gridsome/chainWebpack'),
@@ -38,7 +39,7 @@ module.exports = {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       anchorClassName: 'icon icon-link',
-      plugins: createRemarkContentType.remarkPlugins
+      plugins: remarkPlugins
     }
   }
 }

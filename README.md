@@ -26,6 +26,12 @@ Additionally, the following niceties are included:
   - Markdown uses [Mermaid](https://github.com/temando/remark-mermaid), [TOC](https://github.com/remarkjs/remark-toc), as well as Gridsome's [PrismJS](https://www.npmjs.com/package/@gridsome/remark-prismjs). Links get nofollow by default.
   - **Note**: While [this issue](https://github.com/gridsome/gridsome/issues/902) is worked on, you'll have to enter `timeToRead` yourself in the blog posts.
 
+## Images Handling
+
+to cater for Netlify & co, images that are in `static/images` will be automatically picked up in markdown files, both in the frontmatter, and in image tags.
+
+If you'd like to change the directory, you should change the references to it in both `gridsome.server.js` and `./gridsome/remarkPlugins.js`
+
 ## Deploy Gridsome project
 Use this deploy button to get your own copy of the repository.
 

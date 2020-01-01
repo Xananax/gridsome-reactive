@@ -8,6 +8,7 @@ const LRU = require("lru-cache");
 const { words } = require("lodash");
 const hash = require("hash-sum");
 const { imageType } = require("gridsome/lib/graphql/types/image");
+const _path = require("path");
 
 cacheKey = function(node, key) {
   return hash({
@@ -45,10 +46,18 @@ module.exports.title = (fieldName = "title") => ({
   }
 });
 
-module.exports.cover = (fieldName = "cover", dir="static/images") => ({
+const defaultOptions = {
+  mediaFolder: "static/images"
+};
+
+module.exports.cover = (fieldName = "cover", options = defaultOptions) => ({
   type: imageType.type,
   args: imageType.args,
   async resolve(node, args, context, info) {
+    const { mediaFolder } = { ...options, ...defaultOptions };
+
+    const realPath = _path.join(__dirname, "..", mediaFolder);
+
     const key = cacheKey(node, fieldName);
     let cached = cache.get(key);
 
@@ -79,12 +88,7 @@ module.exports.cover = (fieldName = "cover", dir="static/images") => ({
         cache.set(key, cached);
         return cached;
       }
-      const path = require("path").join(
-        __dirname,
-        "..",
-        dir,
-        `${url}`
-      );
+      const path = _path.join(realPath, `${url}`);
       try {
         result = await context.assets.add(path, args);
       } catch (err) {

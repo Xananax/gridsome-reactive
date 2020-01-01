@@ -1,7 +1,7 @@
 const remark = require( 'remark')
 const html = require('remark-html')
 const sanitize = require('rehype-sanitize')
-const { remarkPlugins } = require('./createRemarkContentType')
+const remarkPlugins = require('./remarkPlugins')
 
 const plugins = [
   html, sanitize, ...remarkPlugins

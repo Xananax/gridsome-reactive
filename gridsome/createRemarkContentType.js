@@ -1,11 +1,4 @@
-const remarkMermaid = require('remark-mermaid')
-const remarkToc = require('remark-toc')
-const remarkPrismJs = require('@gridsome/remark-prismjs')
-const remarkImagesPaths = require('./remarkImagesPaths')
-
-const remarkPlugins = [
-  remarkMermaid, remarkToc, remarkPrismJs, remarkImagesPaths
-]
+const remarkPlugins = require('./remarkPlugins')
 
 const createRemarkContentType = (typeName, opts) => (    {
   use: "@gridsome/vue-remark",
@@ -27,4 +20,3 @@ const createRemarkContentType = (typeName, opts) => (    {
 })
 
 module.exports = createRemarkContentType
-module.exports.remarkPlugins = remarkPlugins
