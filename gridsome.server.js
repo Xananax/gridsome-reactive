@@ -5,49 +5,76 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-module.exports = function (api) {
-  api.loadSource( ({ addSchemaResolvers }) => {
-  
-    const { imageType } = require('gridsome/lib/graphql/types/image')
-    
+module.exports = function(api) {
+  api.loadSource(({ addSchemaResolvers }) => {
+    const { imageType } = require("gridsome/lib/graphql/types/image");
+
     addSchemaResolvers({
-      Post:{
-        title:{
-          type: 'String',
+      Post: {
+        title: {
+          type: "String",
           args: {
-            uppercase: 'Boolean'
+            capitalize: "Boolean"
           },
-          resolve (node, args) {
-            return args.uppercase ? node.title.toUpperCase() : node.title
+          resolve(node, args) {
+            return args.capitalize
+              ? node.title
+                  .split(/\s+/g)
+                  .filter(Boolean)
+                  .map(w =>
+                    w.length > 1 && w !== "the"
+                      ? w[0].toUpperCase() + w.slice(1)
+                      : w
+                  )
+                  .join(" ")
+              : node.title;
           }
         },
-        image:{
+        cover: {
           type: imageType.type,
           args: imageType.args,
-          async resolve (node, args, context, info) {
-            const value = require('path').join(__dirname, 'static', 'images', `${node.fields.file}.jpg`)
+          async resolve(node, args, context, info) {
+            const { cover } = node;
+            if (!cover) {
+              return null;
+            }
+            const props =
+              typeof cover === "string"
+                ? { url: cover, alt: "", credit: { name: "", url: "" } }
+                : {
+                    url: "",
+                    alt: "",
+                    ...cover,
+                    ...(cover.credit
+                      ? {
+                          credit:
+                            typeof cover.credit === "string"
+                              ? { name: cover.credit, url: "" }
+                              : { name: "", url: "", ...cover.credit }
+                        }
+                      : null)
+                  };
+            const { url } = props;
+            if (!url) {
+              return null;
+            }
+            const path = require("path").join(
+              __dirname,
+              "static",
+              "images",
+              `${url}`
+            );
             try {
-              result = await context.assets.add(value, args)
+              result = await context.assets.add(path, args);
             } catch (err) {
-              return ''
+              return null;
             }
-            console.log(result)
-            if (result.isUrl) {
-              return result.src
-            }
-        
-            return {
-              type: result.type,
-              mimeType: result.mimeType,
-              src: result.src,
-              size: result.size,
-              sizes: result.sizes,
-              srcset: result.srcset,
-              dataUri: result.dataUri
-            }
+
+            props.url = result.isUrl ? result.src : result;
+            return props;
           }
         }
       }
-    })
-  })
-}
+    });
+  });
+};

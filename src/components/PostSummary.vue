@@ -5,7 +5,7 @@
     h3.title(v-html="post.title")
     p.description(v-html="post.description")
     b {{post.timeToRead}} min read &nbsp;
-    g-image(v-if="post.cover_image" :src="post.cover_image" alt="sdadsad")
+    g-image(v-if="post.cover" :src="post.cover.url" :alt="post.cover.alt")
     g-link.read(:to="post.path")
       span Read More
       span.visuallyhidden about {{post.title}}

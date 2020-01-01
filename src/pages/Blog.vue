@@ -49,7 +49,7 @@ query ($page: Int) {
         title
         date (format: "D MMMM YYYY")
         path
-        cover_image
+        cover (width: 420, blur: 10)
       }
     }
   }

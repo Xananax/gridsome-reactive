@@ -1,15 +1,12 @@
 <template lang="pug">
   Layout
-    h1 {{ $page.post.image }}
     post-item(
     v-bind="$page.post"
-    :cover="$page.post.cover_image"
-    :image="'~/assets/no-credit.jpg'"
     :timeToRead="$page.post.timeToRead || 3")
-      template(v-if="$page.post.cover_image" v-slot:cover_image)
+      template(v-if="$page.post.cover" v-slot:cover)
         g-image(
             alt="Cover image" 
-            :src="$page.post.cover_image"
+            :src="$page.post.cover.url"
           )
       template(v-slot:default)
         vueRemarkContent
@@ -35,7 +32,7 @@ export default {
 <page-query>
 query Post ($id: ID!) {
   post: post (id: $id) {
-    title
+    title (capitalize: true)
     path
     date (format: "D. MMMM YYYY")
     timeToRead
@@ -46,7 +43,7 @@ query Post ($id: ID!) {
     }
     description
     content
-    cover_image (width: 860, blur: 10)
+    cover (width: 860, blur: 10)
   }
 }
 </page-query>

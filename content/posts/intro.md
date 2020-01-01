@@ -7,9 +7,12 @@ published: true
 description: "Potatoes"
 timeToRead: 4
 state: 8
-cover_image: ./no-credit.jpg
 cover: 
+  url: jacques-bopp-ihQGSEk5wlc-unsplash.jpg
   alt: closed cupboards in a corner of the kitchen
+  credit:
+    author: Jacques Bopp
+    url: https://unsplash.com/@jacquesbopp
 ---
 
 # A Demonstration

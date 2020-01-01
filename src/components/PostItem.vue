@@ -6,12 +6,12 @@
       header-title(level=1) {{title}}
       p.post-date {{date}}
     .post-header(v-if="cover")
-      slot(name="cover_image")
-        g-image(:src="image" :alt="cover.alt")
-      caption(v-if="cover.credit && cover.credit.name")
-        a(v-if="cover.credit.url" :href="cover.credit.url" target="_BLANK") {{ cover.credit.name }}
-        span(v-else) {{ cover.credit.name }}
-      caption(v-else) uncredited
+      slot(name="cover")
+      template(v-if="cover")
+        caption(v-if="cover.credit && cover.credit.name")
+          a(v-if="cover.credit.url" :href="cover.credit.url" target="_BLANK") {{ cover.credit.name }}
+          span(v-else) {{ cover.credit.name }}
+        caption(v-else) uncredited
     .post-content
       slot
     .post-tags
