@@ -1,0 +1,11 @@
+{
+  "files.exclude": {
+    ".cache": true,
+    "node_modules": true,
+    "src/.temp": true,
+    ".vscode": true,
+    "dist": true,
+    "netlify.toml": false,
+    "yarn.lock": true
+  }
+}
