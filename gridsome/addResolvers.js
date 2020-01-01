@@ -45,7 +45,7 @@ module.exports.title = (fieldName = "title") => ({
   }
 });
 
-module.exports.cover = (fieldName = "cover") => ({
+module.exports.cover = (fieldName = "cover", dir="static/images") => ({
   type: imageType.type,
   args: imageType.args,
   async resolve(node, args, context, info) {
@@ -82,8 +82,7 @@ module.exports.cover = (fieldName = "cover") => ({
       const path = require("path").join(
         __dirname,
         "..",
-        "static",
-        "images",
+        dir,
         `${url}`
       );
       try {
