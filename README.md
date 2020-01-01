@@ -36,10 +36,12 @@ Additionally, the following niceties are included:
 
 1.`gridsome create my-gridsome-site https://github.com/gridsome/gridsome-starter-blog.git`
 2.`cd my-gridsome-site` to open folder
-3.`yarn develop` to start local dev server at http://localhost:8080
+3.`yarn start` to start local dev server at http://localhost:8080
 4.Happy coding 🎉🙌
 
 once you're used to how things work, run `yarn remove-readmes` to get rid of all those README files in subfolders all at once.
+
+If you'd like, run `yarn clean` to remove all Gridsome caches
 
 ## Images Handling
 
