@@ -6,7 +6,8 @@
     "develop": "gridsome develop",
     "start": "gridsome develop",
     "explore": "gridsome explore",
-    "clean": "rimraf ./.cache; rimraf ./src/.temp; rimraf node_modules/.cache/gridsome; rimraf node_modules/.cache/terser-webpack-plugin"
+    "clean": "rimraf ./.cache; rimraf ./src/.temp; rimraf node_modules/.cache/gridsome; rimraf node_modules/.cache/terser-webpack-plugin",
+    "remove-readmes": "rimraf src/components/README.md; rimraf src/layouts/README.md; rimraf src/pages/README.md; rimraf src/templates/README.md; rimraf static/README.md; rimraf static/images/README.md"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.26",

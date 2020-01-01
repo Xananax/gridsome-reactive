@@ -26,6 +26,21 @@ Additionally, the following niceties are included:
   - Markdown uses [Mermaid](https://github.com/temando/remark-mermaid), [TOC](https://github.com/remarkjs/remark-toc), as well as Gridsome's [PrismJS](https://www.npmjs.com/package/@gridsome/remark-prismjs). Links get nofollow by default.
   - **Note**: While [this issue](https://github.com/gridsome/gridsome/issues/902) is worked on, you'll have to enter `timeToRead` yourself in the blog posts.
 
+## How to Get Started
+
+### 1. Install Gridsome CLI tool if you don't have
+
+  `npm install --global @gridsome/cli`
+
+### 2. Install this starter
+
+1.`gridsome create my-gridsome-site https://github.com/gridsome/gridsome-starter-blog.git`
+2.`cd my-gridsome-site` to open folder
+3.`yarn develop` to start local dev server at http://localhost:8080
+4.Happy coding 🎉🙌
+
+once you're used to how things work, run `yarn remove-readmes` to get rid of all those README files in subfolders all at once.
+
 ## Images Handling
 
 to cater for Netlify & co, images that are in `static/images` will be automatically picked up in markdown files, both in the frontmatter, and in image tags.
