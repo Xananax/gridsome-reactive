@@ -1,8 +1,6 @@
 <template lang="pug">
   Layout
-    post-item(
-    v-bind="$page.post"
-    :timeToRead="$page.post.timeToRead || 3")
+    post-item(v-bind="$page.post")
       template(v-if="$page.post.cover" v-slot:cover)
         g-image(
             alt="Cover image" 
