@@ -5,7 +5,7 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const { title, cover, timeToRead } = require("./gridsome/addResolvers");
+const { title, cover, timeToRead } = require("./.gridsome/addResolvers");
 
 module.exports = function(api) {
   api.loadSource(({ addSchemaResolvers }) => {

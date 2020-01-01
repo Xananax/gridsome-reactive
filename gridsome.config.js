@@ -9,8 +9,8 @@ const siteName = "Gridsome";
 const siteDescription = "a blog";
 const logoLocation = "./static/images/Logo.svg" 
 
-const createRemarkContentType = require('./gridsome/createRemarkContentType')
-const remarkPlugins = require('./gridsome/remarkPlugins')
+const createRemarkContentType = require('./.gridsome/createRemarkContentType')
+const remarkPlugins = require('./.gridsome/remarkPlugins')
 
 module.exports = {
   metadata:{
@@ -28,12 +28,12 @@ module.exports = {
 
   plugins: [
     createRemarkContentType('Post'),
-    createRemarkContentType('MarkPage',{ baseDir: './content/pages'}),
-    require('./gridsome/feed')(siteName, siteDescription),
-    ...require('./gridsome/gridsomePlugins')()
+    createRemarkContentType('MarkPage',{ pathPrefix:'/page', baseDir: './content/pages'}),
+    require('./.gridsome/feed')(siteName, siteDescription),
+    ...require('./.gridsome/gridsomePlugins')()
   ],
-  ...require('./gridsome/icons')(logoLocation),
-  chainWebpack: require('./gridsome/chainWebpack'),
+  ...require('./.gridsome/icons')(logoLocation),
+  chainWebpack: require('./.gridsome/chainWebpack'),
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
