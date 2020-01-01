@@ -53,6 +53,8 @@ determines the header level.)
 
 Images are added with `![Image Alt](./images/image.jpg)`
 
+![image](../../src/favicon.png)
+
 ### Blockquotes
 
 Markdown uses email-style `>` characters for blockquoting. If you're

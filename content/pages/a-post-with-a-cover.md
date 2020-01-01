@@ -19,3 +19,4 @@ While Markdown's syntax has been influenced by several existing text-to-HTML fil
 inspiration for Markdown's syntax is the format of plain text email.
 
 
+![image](../../src/favicon.png)

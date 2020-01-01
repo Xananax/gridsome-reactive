@@ -1,9 +1,10 @@
 const remarkMermaid = require('remark-mermaid')
 const remarkToc = require('remark-toc')
 const remarkPrismJs = require('@gridsome/remark-prismjs')
+const remarkImagesPaths = require('./remarkImagesPaths')
 
 const remarkPlugins = [
-  remarkMermaid, remarkToc, remarkPrismJs
+  remarkMermaid, remarkToc, remarkPrismJs, remarkImagesPaths
 ]
 
 const createRemarkContentType = (typeName, opts) => (    {

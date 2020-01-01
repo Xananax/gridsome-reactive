@@ -42,7 +42,7 @@ query Blog {
 }
 </page-query>
 ```
-
+![image](../../src/favicon.png)
 You don't need to know GraphQL or Vue to get started with Gridsome - It's a great way to get introduced to both.
 
 

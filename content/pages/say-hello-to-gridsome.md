@@ -15,7 +15,7 @@ We think **Gridsome** is a missing piece to the Vue.js ecosystem. What Gatsby.js
 With **Gridsome** you get a **universal GraphQL layer** for all your connected data sources. It's like a single source of truth for your website data ready to be used in any page or components. Connect to any CMS or APIs like Google Spreadsheet, Airtable, Instagram Feed, local markdown files, etc. 
 
 Here is an example on how to query posts from the GraphQL layer in a page:
-
+![image](../../src/favicon.png)
 
 ```html
 <template>
