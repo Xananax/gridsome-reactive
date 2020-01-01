@@ -1,6 +1,6 @@
 <template lang="pug">
   Layout
-    tag-item(v-bind="item" :posts="posts")
+    tag-item(v-bind="item" :items="posts")
 </template>
 
 <script>
@@ -30,10 +30,12 @@ query Tag ($id: ID!) {
       edges {
         node {
           ...on Post {
+             __typename
             title
             path
           }
           ...on MarkPage {
+             __typename
             title
             path
           }
