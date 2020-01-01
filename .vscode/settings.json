@@ -6,6 +6,7 @@
     ".vscode": true,
     "dist": true,
     "netlify.toml": false,
-    "yarn.lock": true
+    "yarn.lock": true,
+    ".gridsome": true
   }
 }

@@ -53,7 +53,6 @@ determines the header level.)
 
 Images are added with `![Image Alt](./images/image.jpg)`
 
-![image](../../src/favicon.png)
 
 ### Blockquotes
 
