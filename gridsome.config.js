@@ -32,5 +32,13 @@ module.exports = {
     ...require('./gridsome/other_plugins')()
   ],
   ...require('./gridsome/icons')(logoLocation),
-  chainWebpack: require('./gridsome/chainWebpack')
+  chainWebpack: require('./gridsome/chainWebpack'),
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: createRemarkContentType.remarkPlugins
+    }
+  }
 }
