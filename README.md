@@ -49,7 +49,13 @@ to cater for Netlify & co, images that are in `static/images` will be automatica
 
 If you'd like to change the directory, you should change the references to it in both `gridsome.server.js` and `./gridsome/remarkPlugins.js`
 
+## Ready to deploy
+
+- on Gitlab (if you don't want it, remove `gitlab-ci.yml`)
+- on Netlify & Netlify CMS (if you don't want it, remove `netlify.toml` and `static/admin`)
+
 ## Deploy Gridsome project
+
 Use this deploy button to get your own copy of the repository.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/lauragift21/gridsome-minimal-blog)

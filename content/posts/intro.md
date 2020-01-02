@@ -5,7 +5,6 @@ date: 2019-05-23
 tags: ['Markdown', 'Cover Image']
 published: true
 description: "Potatoes"
-timeToRead: 4
 state: 8
 cover: 
   url: jacques-bopp-ihQGSEk5wlc-unsplash.jpg
