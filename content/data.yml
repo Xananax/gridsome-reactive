@@ -1,0 +1,9 @@
+siteUrl: http://localhost:8080
+siteName: Gridsome
+siteDescription: a blog
+logoLocation: ./static/images/Logo.svg
+titleTemplate: "%s | Gridsome"
+pathPrefix: "/" # if you deploy to gitlab and your repository is https://gitlab.com/<USERNAME>/<REPO>), set pathPrefix to "/<REPO>/"
+author:
+  name: Xananax
+  url: https://xananax.com

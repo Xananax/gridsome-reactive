@@ -4,26 +4,31 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const siteUrl = "http://localhost:8080";
-const siteName = "Gridsome";
-const siteDescription = "a blog";
-const logoLocation = "./static/images/Logo.svg" 
+const configFile = './content/data.yml'
+const { siteUrl,
+  siteName,
+  siteDescription,
+  logoLocation,
+  titleTemplate,
+  pathPrefix,
+  ...metadata
+} = require('js-yaml').safeLoad(require('fs').readFileSync(configFile, 'utf8'));
+const readme = require('fs').readFileSync('./README.md','utf8').replace(/\.\/static\/images/g,'/images')
 
 const createRemarkContentType = require('./.gridsome/createRemarkContentType')
 const remarkPlugins = require('./.gridsome/remarkPlugins')
 
 module.exports = {
   metadata:{
-    author:{
-      name: "Xananax",
-      url:"https://xananax.com"
-    }
+    ...metadata,
+    readme
   },
+  
   siteName,
   siteDescription,
   siteUrl,
-  titleTemplate: `%s | ${siteName}`,
-  pathPrefix:"/", // if you deploy to gitlab and your repostiroty is https://gitlab.com/<USERNAME>/<REPO>), set pathPrefix to "/<REPO>/"
+  titleTemplate,
+  
   templates: {
     Tag: '/tag/:id'
   },

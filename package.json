@@ -24,6 +24,7 @@
     "gridsome-plugin-feed": "^1.0.2",
     "gridsome-plugin-pug": "^0.0.3",
     "gridsome-plugin-rss": "^1.2.0",
+    "js-yaml": "^3.13.1",
     "pug": "^2.0.4",
     "rehype-sanitize": "^3.0.0",
     "remark": "^11.0.2",

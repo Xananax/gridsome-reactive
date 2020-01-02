@@ -43,6 +43,10 @@ once you're used to how things work, run `yarn remove-readmes` to get rid of all
 
 If you'd like, run `yarn clean` to remove all Gridsome caches
 
+## Configuration
+
+If you don't want to get too much into details, `content/data.yml` has all the common options you might need.
+
 ## Images Handling
 
 to cater for Netlify & co, images that are in `static/images` will be automatically picked up in markdown files, both in the frontmatter, and in image tags.

@@ -19,6 +19,5 @@ module.exports = function(api) {
         timeToRead: timeToRead("timeToRead")
       }
     });
-    addMetadata('readme', require('fs').readFileSync('./README.md','utf8').replace(/\.\/static\/images/g,'/images'))
   });
 };
