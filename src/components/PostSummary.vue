@@ -6,7 +6,7 @@
     p.description(v-html="post.description")
     b {{post.timeToRead}} min read &nbsp;
     g-image(v-if="post.cover" :src="post.cover.url" :alt="post.cover.alt")
-    g-link.read(:to="post.path")
+    button-nav-link(:to="post.path")
       span Read More
       span.visuallyhidden about {{post.title}}
   </div>
@@ -30,12 +30,6 @@ export default {
 
 .date
   font-weight 300
-
-.read
-  padding 7px
-  color #333
-  text-decoration none
-  border 2px dashed #fecd43
 
 .visuallyhidden
   position absolute !important

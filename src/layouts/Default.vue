@@ -1,9 +1,10 @@
 <template lang="pug">
   .main
     header
-      g-link( to="/")
-        Logo.logo
       top-navigation(:items="menuItems" :showIcons="true")
+        template(v-slot:before)
+          g-link( to="/")
+            Logo.logo
         template(v-slot:after)
           feed-link(:siteUrl="$static.metadata.siteUrl" url="feed.xml" name="rss")
           feed-link(:siteUrl="$static.metadata.siteUrl" url="feed.atom" name="atom")
@@ -14,7 +15,7 @@
         span Built with 
         a(class="link" href="//gridsome.org") Gridsome 
         span & Made with ❤️ by 
-        a(class="link" :href="author.url") {{author.name}}
+        a(class="link" :href="author.url" target="_blank") {{author.name}}
 </template>
 
 <script>
@@ -114,42 +115,15 @@ query {
 </static-query>
 
 <style lang="stylus">
-body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #fecd43;
-  line-height: 1.5;
-  min-height: 100vh;
-}
 
-.logo {
+.main
+  @extend $main
+
+header, footer, article, img
+  @extend $wrapper
+
+.logo
   width: 50px;
   height: 50px;
-}
 
-siteMargin = 2em;
-
-.main {
-  position: absolute;
-  top: siteMargin;
-  left: siteMargin;
-  bottom: siteMargin;
-  right: siteMargin;
-  background: #fdfdfd;
-  padding: siteMargin * 2 0;
-  overflow: auto;
-}
-
-.wrapper, header, footer, article, img {
-  max-width: 760px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-footer {
-  padding-top: 7.5em;
-  text-align: center;
-  font-size: 1em;
-}
 </style>

@@ -14,9 +14,5 @@ export default{
 </script>
 
 <style lang="stylus" scoped>
-.navlink
-  border 2px dashed #fecd43
-  padding 7px
-  color #333
-  text-decoration none
+
 </style>

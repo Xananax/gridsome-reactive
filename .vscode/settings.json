@@ -7,6 +7,6 @@
     "dist": true,
     "netlify.toml": false,
     "yarn.lock": true,
-    ".gridsome": true
+    ".gridsome": false
   }
 }

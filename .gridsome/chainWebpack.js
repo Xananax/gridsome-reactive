@@ -1,5 +1,6 @@
+const globalStyles = require('./webpackGlobalStyles')
+const svgComponents = require('./webpackSvgComponents')
 module.exports = config => {
-  const svgRule = config.module.rule("svg");
-  svgRule.uses.clear();
-  svgRule.use("vue-svg-loader").loader("vue-svg-loader");
+  globalStyles(config)
+  svgComponents(config)
 }
