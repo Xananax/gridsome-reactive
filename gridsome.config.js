@@ -22,6 +22,7 @@ module.exports = {
   siteName,
   siteDescription,
   siteUrl,
+  titleTemplate: `%s | ${siteName}`,
   pathPrefix:"/", // if you deploy to gitlab and your repostiroty is https://gitlab.com/<USERNAME>/<REPO>), set pathPrefix to "/<REPO>/"
   templates: {
     Tag: '/tag/:id'

@@ -1,4 +1,4 @@
-![Logo](./src/assets/Logo.svg)
+![Logo](./static/images/Logo.svg)
 
 # Vue-Remark Blog & Website Template
 

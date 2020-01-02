@@ -8,7 +8,7 @@
 const { title, cover, timeToRead } = require("./.gridsome/addResolvers");
 
 module.exports = function(api) {
-  api.loadSource(({ addSchemaResolvers }) => {
+  api.loadSource(({ addSchemaResolvers, addMetadata }) => {
     addSchemaResolvers({
       Post: {
         title: title("title"),
@@ -19,5 +19,6 @@ module.exports = function(api) {
         timeToRead: timeToRead("timeToRead")
       }
     });
+    addMetadata('readme', require('fs').readFileSync('./README.md','utf8').replace(/\.\/static\/images/g,'/images'))
   });
 };

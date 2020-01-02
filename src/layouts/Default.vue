@@ -39,7 +39,6 @@ export default {
     } = this.$static;
     const ogImageUrl = `${siteUrl}/images/logo.png`;
     return {
-      title: siteName,
       meta: [
         { key: "description",         property: "description",         content: siteDescription },
         { key: "og:type",             property: "og:type",             content: 'website' },
