@@ -29,7 +29,7 @@ module.exports = {
 
   plugins: [
     createRemarkContentType('Post'),
-    createRemarkContentType('MarkPage',{ pathPrefix:'/page', baseDir: './content/pages'}),
+    createRemarkContentType('MarkPage',{ pathPrefix:'/', baseDir: './content/pages'}),
     require('./.gridsome/feed')(siteName, siteDescription),
     ...require('./.gridsome/gridsomePlugins')()
   ],
