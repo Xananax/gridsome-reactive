@@ -63,3 +63,5 @@ If you'd like to change the directory, you should change the references to it in
 Use this deploy button to get your own copy of the repository.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/lauragift21/gridsome-minimal-blog)
+
+[![Run on Repl.it](https://repl.it/badge/github/Xananax/gridsome-reactive)](https://repl.it/github/Xananax/gridsome-reactive)
