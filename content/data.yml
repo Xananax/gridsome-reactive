@@ -7,3 +7,26 @@ pathPrefix: "/" # if you deploy to gitlab and your repository is https://gitlab.
 author:
   name: Xananax
   url: https://xananax.com
+social: 
+  # don't forget to add/remove icons accordingly in 
+  # src/config/fontAwesome.js
+  - name: email
+    url: mailto:me@xananax.com
+    icon: fas envelope
+  - name: mastodon
+    url: //mastodon.gamedev.place/@xananax
+  - name: matrix
+    url: //matrix.to/#/@xananax:mutnt.io
+    icon: fas comment-dots
+  - //gitlab.com/xananax
+  - url: //codesandbox.io/u/Xananax
+    icon: fas code
+  - //reddit.com/u/xananax
+  - //twitter.com/xananax
+  - //github.com/xananax
+  - name: telegram
+    url: //t.me/@xananax
+  - //join.skype.com/invite/nqXVCeXQ2uZM
+  - //codepen.io/Xananax
+  - //keybase.io/xananax
+  - //www.linkedin.com/in/jadsarout/

@@ -1,13 +1,10 @@
 <template lang="pug">
   .main
     header
-      top-navigation(:items="menuItems" :showIcons="true")
+      horizontal-navigation(:items="menuItems" :showIcons="true")
         template(v-slot:before)
           g-link( to="/")
             Logo.logo
-        template(v-slot:after)
-          feed-link(:siteUrl="$static.metadata.siteUrl" url="feed.xml" name="rss")
-          feed-link(:siteUrl="$static.metadata.siteUrl" url="feed.atom" name="atom")
     article
       slot
     footer
@@ -16,13 +13,15 @@
         a(class="link" href="//gridsome.org") Gridsome 
         span & Made with ❤️ by 
         a(class="link" :href="author.url" target="_blank") {{author.name}}
+      .social
+        social-link(v-for="provider in socialItems" v-bind="provider")
 </template>
 
 <script>
 import Logo from "../../static/images/Logo.svg";
-import pageList from '../config/pageList';
+import pageList from "../config/pageList";
 
-const insertIndex = pageList.indexOf("_") || pageList.length
+const insertIndex = pageList.indexOf("_") || pageList.length;
 
 export default {
   components: {
@@ -77,14 +76,31 @@ export default {
     menuItems() {
       const edges = this.$static.pages.edges;
       const markPages = edges.map(({ node }) => ({
-          key: node.id,
-          to: node.path,
-          title: node.title,
-          icon: ""
-        }))
-      const items = pageList.slice()
-      items.splice(insertIndex,1,...markPages)
+        key: node.id,
+        to: node.path,
+        title: node.title,
+        icon: ""
+      }));
+      const items = pageList.slice();
+      items.splice(insertIndex, 1, ...markPages);
       return items;
+    },
+    socialItems() {
+      const { social, siteUrl } = this.$static.metadata;
+      const protocol = "https";
+      const feedItems = [
+        {
+          name: "RSS",
+          icon: ["fas", "rss"],
+          url: `${siteUrl}/feed.xml`
+        },
+        {
+          name: "Atom",
+          icon: ["fas", "atom"],
+          url: `${siteUrl}/feed.xml`
+        }
+      ];
+      return [...social, ...feedItems];
     }
   }
 };
@@ -98,6 +114,13 @@ query {
     siteDescription
     author {
       name
+      url
+    }
+    social {
+      name, 
+      protocol, 
+      address, 
+      icon, 
       url
     }
   }
@@ -115,15 +138,16 @@ query {
 </static-query>
 
 <style lang="stylus">
+.main {
+  @extend $main;
+}
 
-.main
-  @extend $main
+header, footer, article, img {
+  @extend $wrapper;
+}
 
-header, footer, article, img
-  @extend $wrapper
-
-.logo
+.logo {
   width: 50px;
   height: 50px;
-
+}
 </style>
