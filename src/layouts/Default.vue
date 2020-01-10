@@ -138,16 +138,18 @@ query {
 </static-query>
 
 <style lang="stylus">
-.main {
-  @extend $main;
-}
+.main
+  @extend $main
 
-header, footer, article, img {
-  @extend $wrapper;
-}
+header, footer, article, img
+  @extend $wrapper
 
-.logo {
-  width: 50px;
-  height: 50px;
-}
+.logo
+  width 50px
+  height 50px
+
+.social
+  display flex
+  flex-wrap wrap
+  justify-content space-evenly
 </style>
