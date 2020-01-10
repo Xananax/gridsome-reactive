@@ -1,12 +1,17 @@
 {
   "files.exclude": {
     ".cache": true,
+    ".codesandbox": true,
     "node_modules": true,
     "src/.temp": true,
     ".vscode": true,
     "dist": true,
-    "netlify.toml": false,
+    "netlify.toml": true,
     "yarn.lock": true,
-    ".gridsome": false
+    "package-lock.json": true,
+    ".gridsome": true,
+    ".replit": true,
+    ".codesanbox": true,
+    "gitlab-ci.yml": true
   }
 }
