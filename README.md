@@ -23,8 +23,7 @@ Additionally, the following niceties are included:
   - Favicon automatically generated from SVG Logo (in `static/logo.svg`).
   - Auto-registers all components in the `components` directory. This is probably *not suitable* for ambitious projects, where magic is not desirable. Remove it by removing `src/config/autoLoadComponents`.
 - Markdown Handling:
-  - Markdown uses [Mermaid](https://github.com/temando/remark-mermaid), [TOC](https://github.com/remarkjs/remark-toc), as well as Gridsome's [PrismJS](https://www.npmjs.com/package/@gridsome/remark-prismjs). Links get nofollow by default.
-  - **Note**: While [this issue](https://github.com/gridsome/gridsome/issues/902) is worked on, you'll have to enter `timeToRead` yourself in the blog posts.
+  - Markdown uses [Mermaid](https://github.com/temando/remark-mermaid), [TOC](https://github.com/remarkjs/remark-toc), as well as Gridsome's [PrismJS](https://www.npmjs.com/package/@gridsome/remark-prismjs). Links get nofollow by default. `timeToRead` also works just like it does for the regular filesystem plugin, even though it's using `vue-remark`.
 
 ## How to Get Started
 
@@ -62,6 +61,4 @@ If you'd like to change the directory, you should change the references to it in
 
 Use this deploy button to get your own copy of the repository.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/lauragift21/gridsome-minimal-blog)
-
-[![Run on Repl.it](https://repl.it/badge/github/Xananax/gridsome-reactive)](https://repl.it/github/Xananax/gridsome-reactive)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/lauragift21/gridsome-minimal-blog) [![Run on Repl.it](https://repl.it/badge/github/Xananax/gridsome-reactive)](https://repl.it/github/Xananax/gridsome-reactive)

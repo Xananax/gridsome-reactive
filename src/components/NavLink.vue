@@ -1,5 +1,5 @@
 <template lang="pug">
-  g-link.navlink(:to="to")
+  g-link.nav-link(:to="to")
     slot {{ content }}
 </template>
 
@@ -13,6 +13,6 @@ export default{
 }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
 </style>

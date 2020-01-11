@@ -1,20 +1,18 @@
 <template lang="pug">
-  .main
-    header
+  .wrapper
+    header.header
       horizontal-navigation(:items="menuItems" :showIcons="true")
-        template(v-slot:before)
-          g-link( to="/")
-            Logo.logo
-    article
-      slot
-    footer
-      p 
-        span Built with 
-        a(class="link" href="//gridsome.org") Gridsome 
-        span & Made with ❤️ by 
-        a(class="link" :href="author.url" target="_blank") {{author.name}}
-      .social
-        social-link(v-for="provider in socialItems" v-bind="provider")
+    .main
+      article.body
+        slot
+      footer.footer
+        p 
+          span Built with 
+          a(class="link" href="//gridsome.org" target="_blank") Gridsome 
+          span & Made with ❤️ by 
+          a(class="link" :href="author.url" target="_blank") {{author.name}}
+        .social
+          social-link(v-for="provider in socialItems" v-bind="provider" key="provider.url")
 </template>
 
 <script>
@@ -139,17 +137,44 @@ query {
 
 <style lang="stylus">
 .main
-  @extend $main
+  background backgroundColor2
+  padding siteMargin 0
+  overflow auto
+  margin 1em
+  //box-shadow 3px 3px 12px rgba(0,0,0,.2)
 
-header, footer, article, img
+.header, .footer, .body
   @extend $wrapper
+
+.header
+  padding 1em 0
 
 .logo
   width 50px
   height 50px
 
+.footer
+  margin-top siteMargin * 1.5
+  text-align center
+  font-size .8em
+
 .social
   display flex
   flex-wrap wrap
-  justify-content space-evenly
+  justify-content center
+  align-content center
+  .social-link
+    margin .3em
+
+.horizontal-nav
+  color #fdfdfd
+  text-shadow 1px 1px 3px rgba(0,0,0,.3)
+
+.body
+  p:first-of-type
+    img
+      max-width 320px
+      display block
+      @extend $wrapper
+  
 </style>

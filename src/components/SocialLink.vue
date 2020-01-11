@@ -44,7 +44,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.social-link span {
-  display: none;
-}
+.social-link
+  span
+    display none
 </style>
