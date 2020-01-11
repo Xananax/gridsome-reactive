@@ -34,6 +34,7 @@ module.exports = {
 
   plugins: [
     createRemarkContentType("Post"),
+    createRemarkContentType("Feature"),
     createRemarkContentType("MarkPage", {
       pathPrefix: "/",
       baseDir: "./content/pages"

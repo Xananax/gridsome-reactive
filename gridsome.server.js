@@ -7,17 +7,21 @@
 
 const { title, cover, timeToRead } = require("./.gridsome/addResolvers");
 
+const getMarkdownContentSchema = (contentLocation) => ({
+  title: title("title"),
+  cover: cover("cover", {
+    mediaFolder: "static/images",
+    contentFolder: `content/${contentLocation}`
+  }),
+  timeToRead: timeToRead("timeToRead")
+})
+
 module.exports = function(api) {
   api.loadSource(({ addSchemaResolvers, addMetadata }) => {
     addSchemaResolvers({
-      Post: {
-        title: title("title"),
-        cover: cover("cover", {
-          mediaFolder: "static/images",
-          contentFolder: "content/posts"
-        }),
-        timeToRead: timeToRead("timeToRead")
-      }
+      Post: getMarkdownContentSchema('posts'),
+      MarkPage: getMarkdownContentSchema('pages'),
+      Feature: getMarkdownContentSchema('features'),
     });
   });
 };
