@@ -54,8 +54,7 @@ module.exports.cover = (fieldName = "cover", options = defaultOptions) => ({
   type: imageType.type,
   args: imageType.args,
   async resolve(node, args, context, info) {
-    const { mediaFolder } = { ...options, ...defaultOptions };
-
+    const { mediaFolder } = { ...defaultOptions, ...options };
     const realPath = _path.join(__dirname, "..", mediaFolder);
 
     const key = cacheKey(node, fieldName);
@@ -95,7 +94,7 @@ module.exports.cover = (fieldName = "cover", options = defaultOptions) => ({
         cache.set(key, cached);
         return cached;
       }
-
+      console.log(path,"::",url,"::",result)
       props.url = result.isUrl ? result.src : result;
       cached = props;
       cache.set(key, cached);

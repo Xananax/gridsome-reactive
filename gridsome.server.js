@@ -17,11 +17,16 @@ const getMarkdownContentSchema = (contentLocation) => ({
 })
 
 module.exports = function(api) {
-  api.loadSource(({ addSchemaResolvers, addMetadata }) => {
+  api.loadSource(({ addCollection, addSchemaResolvers }) => {
     addSchemaResolvers({
       Post: getMarkdownContentSchema('posts'),
       MarkPage: getMarkdownContentSchema('pages'),
       Feature: getMarkdownContentSchema('features'),
+      Audience: getMarkdownContentSchema('audiences'),
     });
+
+    const features = addCollection('Feature')
+    //const audiences = addCollection('Audience')
+    features.addReference('audience', 'Audience')
   });
 };

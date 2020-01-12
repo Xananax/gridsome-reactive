@@ -1,7 +1,7 @@
 ---
 
 title: File Storage and Syncing
-target: ['office', 'activists', 'family', 'personal']
+audience: ['office', 'activists', 'family', 'personal']
 applications:
   - platform: linux
     url: https://nextcloud.com/install/#install-clients

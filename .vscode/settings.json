@@ -13,5 +13,6 @@
     "package-lock.json": true,
     "src/.temp": true,
     "yarn.lock": true
-  }
+  },
+  "editor.tabSize": 2
 }

@@ -11,8 +11,7 @@
           a(class="link" href="//gridsome.org" target="_blank") Gridsome 
           span & Made with ❤️ by 
           a(class="link" :href="author.url" target="_blank") {{author.name}}
-        .social
-          social-link(v-for="provider in socialItems" v-bind="provider" key="provider.url")
+        social-bar
 </template>
 
 <script>
@@ -82,23 +81,6 @@ export default {
       const items = pageList.slice();
       items.splice(insertIndex, 1, ...markPages);
       return items;
-    },
-    socialItems() {
-      const { social, siteUrl } = this.$static.metadata;
-      const protocol = "https";
-      const feedItems = [
-        {
-          name: "RSS",
-          icon: ["fas", "rss"],
-          url: `${siteUrl}/feed.xml`
-        },
-        {
-          name: "Atom",
-          icon: ["fas", "atom"],
-          url: `${siteUrl}/feed.xml`
-        }
-      ];
-      return [...social, ...feedItems];
     }
   }
 };
@@ -157,14 +139,6 @@ query {
   margin-top siteMargin * 1.5
   text-align center
   font-size .8em
-
-.social
-  display flex
-  flex-wrap wrap
-  justify-content center
-  align-content center
-  .social-link
-    margin .3em
 
 .horizontal-nav
   color #fdfdfd
