@@ -1,13 +1,22 @@
 <template lang="pug">
   Layout
-    post-item(v-bind="$page.post")
-      template(v-if="$page.post.cover" v-slot:cover)
-        g-image(
-            :alt="coverAlt"
-            :src="coverUrl"
-          )
-      template(v-slot:default)
-        vueRemarkContent
+    button-nav-link(to="/blog/")
+    p.post-date {{ item.date }} | {{ item.timeToRead }} min read
+    .post-title
+      header-title(level=1) {{ item.title }}
+      p.post-date {{ item.date }}
+    .post-header(v-if="cover")
+      g-image(:alt="coverAlt" :src="coverUrl")
+      caption(v-if="cover.credit && cover.credit.name")
+        a(v-if="cover.credit.url" :href="cover.credit.url" target="_BLANK") {{ cover.credit.name }}
+        span(v-else) {{ cover.credit.name }}
+      caption(v-else) uncredited
+    .post-content
+      vueRemarkContent
+    .post-tags
+      button-nav-link(class="post-tags__link" v-for="tag in item.tags" :key="tag.id" :to="tag.path")
+        span # 
+        span {{ tag.title }}   
 </template>
 
 <script>
@@ -25,6 +34,12 @@ export default {
     }
   },
   computed:{
+    item(){
+      return this.$page.post
+    },
+    cover(){
+      return this.$page.post.cover 
+    },
     coverUrl(){
       const { cover } = this.$page.post
       //return cover ? require(`!!assets-loader!@images/${cover.url}`) : ""

@@ -1,6 +1,11 @@
 <template lang="pug">
   Layout
-    tag-item(v-bind="item" :items="posts")
+    .tag
+      h1.tag-title
+        span # {{ item.title }}
+      .posts
+        g-link.nav__link(v-for="edge in posts" :key="edge.node.id" :to="edge.node.path")
+          span {{edge.node.title}} - {{ edge.node.__typename }}
 </template>
 
 <script>

@@ -1,6 +1,9 @@
 <template lang="pug">
   Layout(:show-logo="false")
     features-list
+    hr
+    audience-list
+    hr
     markdown {{ metadata.readme }}
 </template>
 

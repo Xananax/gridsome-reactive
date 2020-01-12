@@ -1,7 +1,6 @@
 <template lang="pug">
   Layout
-    p {{ item.title }}
-    code: pre {{ features }}
+    h1 {{ item.title }}
     ul
       li(v-for="edge in features")
         button-nav-link(:to="edge.node.path") {{ edge.node.title }}

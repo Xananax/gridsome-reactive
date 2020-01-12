@@ -1,5 +1,5 @@
 <template lang="pug">
-  div
+  .page
     button-nav-link(to="/")
     header-title(level=1) {{title}}
     .post-content

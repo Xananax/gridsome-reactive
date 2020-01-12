@@ -10,7 +10,6 @@ export default {
   computed: {
     items() {
       const { edges } = this.$static.allFeature 
-      console.log(edges)
       return edges;
     }
   }

@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav.horizontal-nav
+  nav.horizontal-navigation
     slot(name="before")
     nav-link(
       v-for="item in items"
@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="stylus">
-.horizontal-nav
+.horizontal-navigation
   display flex
   flex-wrap wrap
   justify-content space-evenly
