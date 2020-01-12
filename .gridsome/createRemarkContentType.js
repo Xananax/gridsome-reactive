@@ -8,7 +8,11 @@ const createRemarkContentType = (typeName, opts) => (    {
     pathPrefix: `/${typeName.toLowerCase()}`,
     template: `./src/templates/${typeName}.vue`,
     plugins: remarkPlugins,
-    ...opts
+    ...opts,
+    refs: { 
+      tags: { typeName: "Tag", create: true },
+      ...( opts && opts.refs )
+    }
   }
 })
 

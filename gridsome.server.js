@@ -8,41 +8,33 @@
 const { title, cover, timeToRead } = require("./.gridsome/addResolvers");
 
 const getMarkdownContentSchema = (contentLocation) => ({
+  // has "capitalize" feature
   title: title("title"),
+  // provides rich image and stores images in a netlify-compatible way 
   cover: cover("cover", {
     mediaFolder: "static/images",
     contentFolder: `content/${contentLocation}`
   }),
+  // estimates time to read
   timeToRead: timeToRead("timeToRead")
 })
 
 module.exports = function(api) {
   api.loadSource( async ({ getCollection, addSchemaResolvers }) => {
     addSchemaResolvers({
+      // augment markdown types with resolvers
       Post: getMarkdownContentSchema('posts'),
       MarkPage: getMarkdownContentSchema('pages'),
       Feature: getMarkdownContentSchema('features'),
       Audience: getMarkdownContentSchema('audiences'),
     });
-    /*** /
-    const features = getCollection('Feature')
-    const audiences = getCollection('Audience')
-    features.addReference('audiences', 'Audience')
-    await Promise.all(features.data().map(async feature => {
-      const find = (audienceName) => feature.audiences.indexOf(audienceName) >= 0
-      const audiences_ids = audiences.data().filter( audience => find(audience.fileInfo.name)).map((audience)=>{
-        audience.features = audience.features ? [...audience.features, feature.id ] : [ feature.id ]
-        return audience.id
-      })
-      feature.audiences = audiences_ids
-      return feature
-    }))
-    /***/
   })
   api.onCreateNode( options => {
-    if (options.fileInfo) {
+    if (options.fileInfo) { // make all ids be filenames
       options.id = options.fileInfo.name
     }
+    // allow to write tags and audiences as strings instead of arrays
+    // both comma separated or space separated are accepted
     const clean = str => str.split(/,/.test(str) ? /,/ : /\s+/).map(string => string.trim()).filter(Boolean)
     const splitIfNecessary = strOrArr => (typeof strOrArr === 'string') ? clean(strOrArr) : strOrArr;
     if('tags' in options){
