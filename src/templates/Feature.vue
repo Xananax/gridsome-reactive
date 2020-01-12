@@ -1,7 +1,10 @@
 <template lang="pug">
   Layout
-    page-item(v-bind="item")
-      vueRemarkContent
+    g-image(
+      alt="Cover image" 
+      :src="item.url"
+    )
+    p {{ item.title }}
 </template>
 
 <script>
@@ -14,7 +17,7 @@ export default {
   },
   computed: {
     item() {
-      return this.$page.page;
+      return this.$page.feature;
     }
   }
 };
@@ -25,6 +28,7 @@ query ($id: ID!) {
   feature(id: $id) {
     title
     path
+    cover
   }
 }
 </page-query>
