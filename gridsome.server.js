@@ -17,16 +17,38 @@ const getMarkdownContentSchema = (contentLocation) => ({
 })
 
 module.exports = function(api) {
-  api.loadSource(({ addCollection, addSchemaResolvers }) => {
+  api.loadSource( async ({ getCollection, addSchemaResolvers }) => {
     addSchemaResolvers({
       Post: getMarkdownContentSchema('posts'),
       MarkPage: getMarkdownContentSchema('pages'),
       Feature: getMarkdownContentSchema('features'),
       Audience: getMarkdownContentSchema('audiences'),
     });
-
-    const features = addCollection('Feature')
-    //const audiences = addCollection('Audience')
-    features.addReference('audience', 'Audience')
-  });
+    /*** /
+    const features = getCollection('Feature')
+    const audiences = getCollection('Audience')
+    features.addReference('audiences', 'Audience')
+    await Promise.all(features.data().map(async feature => {
+      const find = (audienceName) => feature.audiences.indexOf(audienceName) >= 0
+      const audiences_ids = audiences.data().filter( audience => find(audience.fileInfo.name)).map((audience)=>{
+        audience.features = audience.features ? [...audience.features, feature.id ] : [ feature.id ]
+        return audience.id
+      })
+      feature.audiences = audiences_ids
+      return feature
+    }))
+    /***/
+  })
+  api.onCreateNode( options => {
+    if (options.internal.typeName === 'Audience') {
+      options.id = options.fileInfo.name
+    }
+    if('tags' in options){
+      options.tags = (typeof options.tags === 'string') ? options.tags.split(',').map(string => string.trim()) : options.tags;
+    }
+    if('audiences' in options){
+      options.audiences = (typeof options.audiences === 'string') ? options.audiences.split(',').map(string => string.trim()) : options.audiences;
+    }
+    return { ...options }
+  })
 };

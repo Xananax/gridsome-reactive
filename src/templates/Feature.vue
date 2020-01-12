@@ -1,10 +1,19 @@
 <template lang="pug">
   Layout
+    h1 {{ item.title }}
     g-image(
       alt="Cover image" 
-      :src="item.url"
+      :src="item.cover.url"
     )
-    p {{ item.title }}
+    hr
+    ul
+      li(v-for="audience in audiences")
+        g-link(:to="audience.path") {{ audience.title }}
+    hr
+    ul
+      li(v-for="edge in applications") {{ edge.platform }} - {{ edge.url }}
+    hr
+    vueRemarkContent
 </template>
 
 <script>
@@ -18,6 +27,12 @@ export default {
   computed: {
     item() {
       return this.$page.feature;
+    },
+    applications(){
+      return this.$page.feature.applications
+    },
+    audiences(){
+      return this.$page.feature.audiences
     }
   }
 };
@@ -28,7 +43,17 @@ query ($id: ID!) {
   feature(id: $id) {
     title
     path
-    cover
+    cover (width: 420, blur: 10)
+    description
+    audiences {
+      id
+      title
+      path
+    }
+    applications {
+      platform
+      url
+    }
   }
 }
 </page-query>

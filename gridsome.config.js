@@ -33,12 +33,17 @@ module.exports = {
   },
 
   plugins: [
-    createRemarkContentType("Post"),
-    createRemarkContentType("Feature"),
+    createRemarkContentType("Feature", {
+      refs: { audiences: { typeName:'Audience' } }
+    }),
     createRemarkContentType("Audience"),
+    createRemarkContentType("Post", {
+      refs: { tags: { typeName: "Tag", create: true } }
+    }),
     createRemarkContentType("MarkPage", {
       pathPrefix: "/",
-      baseDir: "./content/pages"
+      baseDir: "./content/pages",
+      refs: { tags: { typeName: "Tag", create: true } }
     }),
     require("./.gridsome/feed")(siteName, siteDescription),
     ...require("./.gridsome/gridsomePlugins")()

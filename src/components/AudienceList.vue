@@ -19,22 +19,12 @@ export default {
 
 <static-query>
 query {
-  allFeature{
+  allAudience{
     edges {
       node {
         id
         title
         path
-        cover (width: 420, blur: 10)
-        description
-        audiences {
-          id
-          title
-        }
-        applications {
-          platform
-          url
-        }
       }
     }
   }
