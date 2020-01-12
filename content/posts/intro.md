@@ -2,7 +2,7 @@
 
 title: Intro
 date: 2019-05-23
-tags: ['Markdown', 'Cover Image']
+tags: Markdown Image
 published: true
 description: "Potatoes"
 state: 8

@@ -40,14 +40,16 @@ module.exports = function(api) {
     /***/
   })
   api.onCreateNode( options => {
-    if (options.internal.typeName === 'Audience') {
+    if (options.fileInfo) {
       options.id = options.fileInfo.name
     }
+    const clean = str => str.split(/,/.test(str) ? /,/ : /\s+/).map(string => string.trim()).filter(Boolean)
+    const splitIfNecessary = strOrArr => (typeof strOrArr === 'string') ? clean(strOrArr) : strOrArr;
     if('tags' in options){
-      options.tags = (typeof options.tags === 'string') ? options.tags.split(',').map(string => string.trim()) : options.tags;
+      options.tags = splitIfNecessary(options.tags)
     }
     if('audiences' in options){
-      options.audiences = (typeof options.audiences === 'string') ? options.audiences.split(',').map(string => string.trim()) : options.audiences;
+      options.audiences = splitIfNecessary(options.audiences)
     }
     return { ...options }
   })
