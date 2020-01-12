@@ -4,7 +4,9 @@
 // Changes here requires a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const configFile = "./content/data.yml";
+// utility for common Vue-Remark settings
+const createRemarkContentType = require("./.gridsome/createRemarkContentType");
+
 const {
   siteUrl,
   siteName,
@@ -13,13 +15,15 @@ const {
   titleTemplate,
   pathPrefix,
   ...metadata
-} = require("js-yaml").safeLoad(require("fs").readFileSync(configFile, "utf8"));
+} = require("js-yaml").safeLoad(require("fs").readFileSync("./content/data.yml", "utf8"));
+
+// add a markdown file to metadata (this file isn't parsed, just plain text)
 metadata.readme = require("fs")
   .readFileSync("./README.md", "utf8")
-  .replace(/\.\/static\/images/g, "/images");
+  .replace(/\.\/static\/images/g, "/images"); 
+
+// parses and normalizes the social array
 metadata.social = require("./.gridsome/normalizeSocial")(metadata.social);
-const createRemarkContentType = require("./.gridsome/createRemarkContentType");
-const remarkPlugins = require("./.gridsome/remarkPlugins");
 
 module.exports = {
   metadata,
@@ -37,13 +41,10 @@ module.exports = {
       refs: { audiences: { typeName:'Audience' } }
     }),
     createRemarkContentType("Audience"),
-    createRemarkContentType("Post", {
-      refs: { tags: { typeName: "Tag", create: true } }
-    }),
+    createRemarkContentType("Post"),
     createRemarkContentType("MarkPage", {
       pathPrefix: "/",
-      baseDir: "./content/pages",
-      refs: { tags: { typeName: "Tag", create: true } }
+      baseDir: "./content/pages"
     }),
     require("./.gridsome/feed")(siteName, siteDescription),
     ...require("./.gridsome/gridsomePlugins")()
@@ -55,7 +56,7 @@ module.exports = {
       externalLinksTarget: "_blank",
       externalLinksRel: ["nofollow", "noopener", "noreferrer"],
       anchorClassName: "icon icon-link",
-      plugins: remarkPlugins
+      plugins: require("./.gridsome/remarkPlugins")
     }
   }
 };
