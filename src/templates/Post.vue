@@ -27,13 +27,12 @@ export default {
   computed:{
     coverUrl(){
       const { cover } = this.$page.post
-      const url = cover ? require(`!!assets-loader!@images/${cover.url}`) : ""
-      // return cover ? cover.url : ""
-      return url
+      //return cover ? require(`!!assets-loader!@images/${cover.url}`) : ""
+      return cover ? cover.url : ""
     },
     coverAlt(){
       const { cover } = this.$page.post
-      return cover.alt || "cover image"
+      return cover && cover.alt || "cover image"
     }
   }
 }

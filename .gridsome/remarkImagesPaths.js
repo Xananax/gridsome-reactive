@@ -11,7 +11,7 @@ module.exports = (options = defaultOptions) => (ast) => {
   const { mediaFolder, contentFolder } = { ...options, ...defaultOptions };
 
   const mediaDir = _path.relative(contentFolder, mediaFolder);
-  return
+  
   visit(ast, 'g-image', (node) => {
     const data = node.data || (node.data = {})
     const props = data.hProperties || (data.hProperties = {})
