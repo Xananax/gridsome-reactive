@@ -88,6 +88,9 @@ module.exports.cover = (fieldName = "cover", options = defaultOptions) => ({
         return cached;
       }
       const path = _path.join(realPath, `${url}`);
+      cached = props
+      cache.set(key, props)
+      /** * /
       try {
         result = await context.assets.add(path, args);
       } catch (err) {
@@ -98,6 +101,7 @@ module.exports.cover = (fieldName = "cover", options = defaultOptions) => ({
       props.url = result.isUrl ? result.src : result;
       cached = props;
       cache.set(key, cached);
+      /**/
     }
 
     return cached;

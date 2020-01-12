@@ -3,8 +3,8 @@
     post-item(v-bind="$page.post")
       template(v-if="$page.post.cover" v-slot:cover)
         g-image(
-            alt="Cover image" 
-            :src="$page.post.cover.url"
+            :alt="coverAlt"
+            :src="coverUrl"
           )
       template(v-slot:default)
         vueRemarkContent
@@ -22,6 +22,18 @@ export default {
           content: this.$page.post.description
         }
       ]
+    }
+  },
+  computed:{
+    coverUrl(){
+      const { cover } = this.$page.post
+      const url = cover ? require(`!!assets-loader!@images/${cover.url}`) : ""
+      // return cover ? cover.url : ""
+      return url
+    },
+    coverAlt(){
+      const { cover } = this.$page.post
+      return cover.alt || "cover image"
     }
   }
 }
