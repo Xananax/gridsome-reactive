@@ -14,5 +14,6 @@
     "src/.temp": true,
     "yarn.lock": true
   },
-  "editor.tabSize": 2
+  "editor.tabSize": 2,
+  "git.autofetch": true
 }
