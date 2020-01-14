@@ -5,14 +5,10 @@
       alt="Cover image" 
       :src="item.cover.url"
     )
-    hr
-    ul
-      li(v-for="audience in audiences" :key="audience.id")
-        audience-link(:path="audience.path" :kind="audience.id")
-    hr
-    ul
-      li(v-for="edge in applications" :key="edge.platform")
-        software-repository-link(:url="edge.url" :platform="edge.platform")
+    .audiences.tags-list
+      audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id")
+    .software.tags-list
+      software-repository-link(v-for="edge in applications" :key="edge.platform" :url="edge.url" :platform="edge.platform")
     hr
     vueRemarkContent
 </template>

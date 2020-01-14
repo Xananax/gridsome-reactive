@@ -1,7 +1,7 @@
 <template lang="pug">
-  button-nav-link(:to="path")
-    fontAwesome(:icon="data.icon")
-    span {{ data.label }}
+  g-link.audience-link(:to="path")
+    fontAwesome.icon(:icon="data.icon")
+    span.label {{ data.label }}
 </template>
 
 <script>
@@ -28,3 +28,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+  .audience-link
+    @extends .button
+    background-color mutedAccent
+</style>

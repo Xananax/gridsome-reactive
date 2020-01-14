@@ -36,7 +36,8 @@ import {
   faBriefcase,
   faUser,
   faUsers,
-  faUserSecret
+  faUserSecret,
+  faExternalLinkAlt
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -74,6 +75,7 @@ library.add(
   faUser,
   faUsers,
   faUserSecret,
+  faExternalLinkAlt,
 );
 
 export default FontAwesomeIcon;

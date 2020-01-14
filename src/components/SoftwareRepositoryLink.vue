@@ -2,6 +2,7 @@
   external-link.software-repository-link(:href="url")
     fontAwesome(:icon="data.icon")
     span {{ data.label }}
+    fontAwesome(:icon="['fas','external-link-alt']")
 </template>
 
 <script>
@@ -28,3 +29,9 @@ export default {
   }
 }
 </script>
+
+<style lang="stylus">
+  .software-repository-link
+    @extends .button
+    background-color mutedAccent
+</style>
