@@ -1,7 +1,7 @@
 <template lang="pug">
-  .features-list
+  .audience-list
     p(v-for="edge in items" :key="edge.node.id") 
-      button-nav-link(:to="edge.node.path") {{ edge.node.title }}
+      audience-link(:path="edge.node.path" :title="edge.node.title")
 </template>
 
 <script>

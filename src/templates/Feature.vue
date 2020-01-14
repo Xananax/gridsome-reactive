@@ -7,11 +7,12 @@
     )
     hr
     ul
-      li(v-for="audience in audiences")
-        g-link(:to="audience.path") {{ audience.title }}
+      li(v-for="audience in audiences" :key="audience.id")
+        audience-link(:path="audience.path" :kind="audience.id")
     hr
     ul
-      li(v-for="edge in applications") {{ edge.platform }} - {{ edge.url }}
+      li(v-for="edge in applications" :key="edge.platform")
+        software-repository-link(:url="edge.url" :platform="edge.platform")
     hr
     vueRemarkContent
 </template>
