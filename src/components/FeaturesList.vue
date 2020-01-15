@@ -1,7 +1,7 @@
 <template lang="pug">
   .features-list
-    p(v-for="edge in items" :key="edge.node.id") 
-      button-nav-link(:to="edge.node.path") {{ edge.node.title }}
+    p(v-for="feature in items" :key="feature.id") 
+      button-nav-link(:to="feature.path") {{ feature.title }}
 
 </template>
 
@@ -10,7 +10,7 @@ export default {
   computed: {
     items() {
       const { edges } = this.$static.allFeature 
-      return edges;
+      return edges.map(({node})=>node)
     }
   }
 }
@@ -24,7 +24,7 @@ query {
         id
         title
         path
-        cover (width: 420, blur: 10)
+        cover (width: 200, height: 200, blur: 10)
         description
         audiences {
           id

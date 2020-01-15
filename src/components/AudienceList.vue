@@ -1,7 +1,7 @@
 <template lang="pug">
   .audience-list
-    p(v-for="edge in items" :key="edge.node.id") 
-      audience-link(:path="edge.node.path" :title="edge.node.title")
+    p(v-for="audience in items" :key="audience.id") 
+      g-link(:to="audience.path") {{ audience.title }}
 </template>
 
 <script>
@@ -9,7 +9,7 @@ export default {
   computed: {
     items() {
       const { edges } = this.$static.allAudience
-      return edges;
+      return edges.map( ({node}) => node )
     }
   }
 }

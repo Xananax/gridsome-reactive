@@ -2,11 +2,11 @@
   Layout
     h1 {{ item.title }}
     g-image(
-      alt="Cover image" 
+      alt="Cover image"
       :src="item.cover.url"
     )
     .audiences.tags-list
-      audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id")
+      audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id" :title="audience.title")
     .software.tags-list
       software-repository-link(v-for="edge in applications" :key="edge.platform" :url="edge.url" :platform="edge.platform")
     hr

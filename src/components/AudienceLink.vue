@@ -1,7 +1,7 @@
 <template lang="pug">
   g-link.audience-link(:to="path")
     fontAwesome.icon(:icon="data.icon")
-    span.label {{ data.label }}
+    span.label {{ title }}
 </template>
 
 <script>
@@ -17,6 +17,10 @@ export default {
       required: true
     },
     path:{
+      type: String,
+      required: true
+    },
+    title:{
       type: String,
       required: true
     }
