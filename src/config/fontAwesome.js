@@ -20,7 +20,8 @@ import {
   faApple,
   faAppStoreIos,
   faAndroid,
-  faGitAlt
+  faGitAlt,
+  faOsi,
 } from "@fortawesome/free-brands-svg-icons";
 // To know what icons are available, look into
 // https://fontawesome.com/icons?d=gallery&s=solid&m=free
@@ -40,7 +41,7 @@ import {
   faUserSecret,
   faExternalLinkAlt,
   faGlobe,
-  faDollarSign
+  faDollarSign,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -66,6 +67,7 @@ library.add(
   faAppStoreIos,
   faAndroid,
   faGitAlt,
+  faOsi,
   //
   faSpinner,
   faHome,
@@ -99,13 +101,14 @@ export const getPlatformIcon = getIconFor({
   google: ['Play Store','fab','google-play'],
   'f-droid': ['F-Droid','fab','android'],
   ios: [ 'IOS', 'fab', 'app-store-ios' ],
-  web: [ 'Web', 'fas', 'globe' ]
+  web: [ 'Web', 'fas', 'globe' ],
 })
 
 export const getAudiencePlatformIcon = getIconFor({
   office: ['Business','fas','briefcase'],
   family: ['Family','fas','users'],
   personal: ['Personal','fas','user'],
-  activist: ['Journalist','fas','user-secret'],
+  activist: ['Activist','fas','user-secret'],
+  journalist: ['Journalist','fas','newspaper'],
 })
 

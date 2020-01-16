@@ -119,129 +119,18 @@ Every application that runs on 7isme is open source, with a liberal license. 7is
 
 # Applications
 
-
-title: Notes
-
-audiences: android ios desktop
-
-
-
-
-
-<div class="page"/>
-
-title: Phone Tracking
-audiences: family personal android ios
-upstream:
-  name: Phonetrack Nextcloud Application
-  url: https://gitlab.com/eneiluj/phonetrack-oc
-cover:
-  alt: A tracked phone on a map
-  url: features/phone-tracking.jpg
-
-Track your phone, or share yoemailur location with friends or publicly.1
-
-<div class="page"/>
-
-title: Email Client
-
-audiences: office activist family personal desktop
-
-upstream:
-  name: RainLoop
-  url: https://www.rainloop.net
-
-cover:
-  alt: A demonstration of the mail client in action
-  url: features/./email-client.png
-
-A web-based email manager, allowing you to connect multiple accounts, including of course your default 7isme email.
-
-Additionally to email, it can also manage messages from Google, Facebook, and Twitter.
-
-<div class="page"/>
-
-title: Email Client (2)
-
-audiences: office activist family personal desktop
-
-upstream:
-  name: Horde Webmail
-  url: https://www.horde.org/apps/webmail
-
-cover:
-  alt: A demonstration of the mail client in action
-  url: features/./email-client-horde.png
-
-A web-based email manager, allowing you to connect multiple accounts, including of course your default 7isme email.
-
-It integrates with the rest of the system, and allows you to attach files directly from your drive.
-
-<div class="page"/>
-
-title: Android SMS Backup
-
-audiences: personal android
-
-upstream:
-  name: OwnCloud SMS
-  url: https://github.com/nextcloud/ocsms.
-
-cover:
-  alt: An example of backed up SMSes
-  url: features/./phone-sync.png
-
-Backup and restore all SMSes from your Android phone. Not Iphone compatible yet.
-
-App available [here](https://play.google.com/store/apps/details?id=fr.unix_experience.owncloud_sms)
-
-<div class="page"/>
-
-title: Contacts Syncing
-
-audiences: office family personal android ios
-
-upstream:
-  name: Nextcloud Contacts
-  url: https://github.com/nextcloud/contacts
-
-cover:
-  alt: An example of the contacts panel
-  url: features/./contacts.png
-
-Backup and restore contacts to your devices, and share contacts with co-workers and friends.
-
-<div class="page"/>
-
-title: E-book library
-
-audiences: personal android ios desktop
-
-upstream:
-  name: Epub.js
-  url: https://github.com/futurepress/epub.js and [Files_OPDS](https://github.com/Yetangitu/owncloud-apps/tree/master/files_opds)
-
-Provides both a way to read your books online, as well as a way to easily browse and access them online through any OPDS-compatible device (most phone ebook readers are, unfortunately, not many hardware e-readers).
-
-cover:
-  alt: Calibre-web
-  url: features/./calibre-web.png
-
-If you use [Calibre](https://calibre-ebook.com/) and sync the library, you can access it online using [Calibre-Web](https://github.com/janeczku/calibre-web).
-
 <div class="page"/>
 
 title: Collaborative Budget Manager
-
-audiences: family personal android ios desktop
-
+audiences: family personal
+status: stable
 upstream:
   name: Cospend
   url: https://gitlab.com/eneiluj/cospend-nc
-
 cover:
   alt: A project view in Cospend
-  url: features/./cospend.png
+  url: features/cospend.png
+description: Manage event or group expenses
 
 Nextcloud Cospend is a group/shared budget manager. You can use it when you share a house, when you go on vacation with friends, whenever you share money with others.\
 It lets you create projects with members and bills. People that are not part of youru network can still be invited to particpate in the project. It also allows you to create recurring bills. It can sync with an [Android client](https://play.google.com/store/apps/details?id=net.eneiluj.moneybuster).
@@ -249,16 +138,15 @@ It lets you create projects with members and bills. People that are not part of 
 <div class="page"/>
 
 title: Self Destructing Messages
-
-audiences: activist personal desktop
-
+audiences: activist
+status: stable
 upstream:
   name: PrivateBin
   url: https://privatebin.net/
-
 cover:
   alt: An empty bin
-  url: features/./privatebin.png
+  url: features/privatebin.png
+description: Write secure messages that will only be accessible once
 
 Allow anyone to write messages that self-destruct after a while, or after reading. Very useful for sensitive information that should not fall captive to preying eyes. The server has zero knowledge of pasted data. Data is encrypted/decrypted in the browser using 256 bits AES.
 
@@ -266,42 +154,39 @@ Allow anyone to write messages that self-destruct after a while, or after readin
 <div class="page"/>
 
 title: On the Fly Custom Email Address
-
-audiences: activist personal android ios desktop
-
-Create your own email addresses; there's no limit, or rule to how many you or your users can have. Go wild!
+audiences: activist personal office family
+status: stable
+description: Create your own email addresses; there's no limit, or rule to how many you or your users can have. Go wild!
 
 Additionally, profit from this to create *spam honeypots*: If your email is bob@example.com, and you're registering to facebook, use bob.facebook.com@example.com. The part after the first dot will be ignored, and you'll be able to create auto-rules to store emails according to your preferences. When Facebook begins selling your email to advertisers, you can easily filter them out.
 
 <div class="page"/>
 
 title: Polls & Forms
-
-audiences: office activist desktop
-
+audiences: office activist
+status: stable
 upstream:
   name: Nextcloud Forms
   url: https://github.com/nextcloud/forms
-
 cover:
   alt: The Nextcloud Form editing interface
-  url: features/./forms.png
+  url: features/forms.png
+description: Ask questions and collect data
 
 A forms app, similar to [Google Forms](https://www.google.com/forms/about/). Collect data, send surveys, or allow people to contact you.
 
 <div class="page"/>
 
 title: Simple Website publishing
-
-audiences: activist personal android ios desktop
-
+audiences: activist personal
+status: stable
 upstream:
   name: Pico CMS
   url: http://picocms.org/
-
 cover:
   alt: An example of PicoCMS in action
-  url: features/./pico-cms.jpg
+  url: features/pico-cms.jpg
+description: Publish your notes
 
 Super-simple publishing: Creating a new page is no more than creating a simple text file in your file manager. No config is required, no utterly complex management interfaces - just files. Secure Sharing, collaboration, and access control are the same that you already use for your files.
 
@@ -310,16 +195,15 @@ Multiple sites and blogs are possible.
 <div class="page"/>
 
 title: Federated Social Network
-
-audiences: office activist family personal android ios desktop
-
+audiences: office activist family personal
+status: stable
 upstream:
   name: Nextcloud Social
   url: https://github.com/nextcloud/social
-
 cover:
   alt: A conversation in Nextcloud Social
-  url: features/./social.png
+  url: features/social.png
+description: Your own personal social network, connected to other personal networks
 
 You will own your own social network, which you can use with friends and family on your own server. Additionally, you can connect to any other social network of the [Fediverse](https://fediverse.party/). the Fediverse is a *Federated Social Network*. It works a bit like email: gmail users and hotmail users can communicate, despite being on two different domains.
 
@@ -330,32 +214,28 @@ Federation allows you to own your own data and not be restricted by any censorsh
 <div class="page"/>
 
 title: Mind Map
-
-audiences: personal desktop
-
+audiences: personal
+status: stable
 upstream:
   name: Kityminder Editor
   url: https://github.com/fex-team/kityminder-editor
-
 cover:
   alt: A mind map
-  url: features/./mind-map.png
-
-A mind map editor that is capable of auto-organising notes, and export in text format.
+  url: features/mind-map.png
+description: A mind map editor that is capable of auto-organising notes, and export in text format.
 
 <div class="page"/>
 
 title: Secure, Decentralized Chat
-
-audiences: office activist family personal android ios desktop
-
+audiences: office activist family personal
+status: stable
 upstream:
   name: Synapse
   url: https://github.com/matrix-org/synapse
-
 cover:
   alt: The Riot client
-  url: features/./riot.png
+  url: features/riot.png
+description: Your own secure chat server
 
 Get access to [Matrix](https://matrix.org/), an open network for secure, decentralized communication. Using Matrix, you can host your own chat, that only people you invite have access to, or plug into the federated Matrix ecosystem, that allows you to chat with anyone using Matrix anywhere.
 
@@ -364,96 +244,77 @@ Multiple clients exist for all platforms, the most cited one being [Riot](https:
 <div class="page"/>
 
 title: Meetings Scheduler
-
-audiences: office android ios desktop
-
+audiences: office journalist
+status: stable
 upstream:
   name: Open Sondage
   url: https://demo.yunohost.org/date/
-
 cover:
   alt: An example of a poll
-  url: features/./meetings_scheduler.png
+  url: features/meetings_scheduler.png
+description: Sync with co-workers
 
 Allows you to invite people to time slots, and allow them to pick the one that is more suitable for them. Like [Doodle](https://doodle.com/), but free, and running on your own hardware.
 
-<div class="page"/>
-
-title: Meetings Scheduler (2)
-
-audiences: office android ios desktop
-
-upstream:
-  name: Nextcloud Poll
-  url: https://github.com/nextcloud/polls
-
-cover:
-  alt: An example of a poll
-  url: features/./meetings_scheduler-2.png
-
-Allows you to invite people to time slots, and allow them to pick the one that is more suitable for them. Like [Doodle](https://doodle.com/), but free, and running on your own hardware.
+Alternative: https://github.com/nextcloud/polls
 
 <div class="page"/>
 
 title: Kanban board
-
-audiences: office desktop
-
+audiences: office personal
+status: stable
 upstream:
   name: Deck
   url: https://github.com/nextcloud/deck
-
 cover:
   alt: Deck in action
-  url: features/./deck.png
+  url: features/deck.png
+description: Kanban-style project & personal management tool
 
 Kanban-style project & personal management tool for Nextcloud, similar to [Trello](https://trello.com/). Syncing with Android coming soon.
 
 <div class="page"/>
 
 title: NewsLetter Management
-
 audiences: activist desktop
-
+status: stable
 upstream:
   name: Mailman
   url: http://www.list.org/
-
 cover:
   alt: The Mailman interface
-  url: features/./mailman.png
+  url: features/mailman.png
+description: allow people to subscribe to things
 
 managing electronic mail discussion and e-newsletter lists.
 
 <div class="page"/>
 
 title: Tasks
-
 audiences: office android ios desktop
-
+status: stable
 upstream:
   name: Nextcloud Tasks
   url: https://github.com/nextcloud/tasks/
-
 cover:
   alt: Some tasks
   url: features/tasks.png
+description: tasks
 
 Task management, with reminders, deadlines, sub-tasks and multiple possible lists. Syncs with multiple clients on both [Android](https://opentasks.app/) and IOS & MacOS (using [Apple Reminders](https://en.wikipedia.org/wiki/Reminders_(Apple))), as well as [Desktop](https://www.qownnotes.org/).
 
 <div class="page"/>
 
 title: Maps
-
 audiences: family personal desktop
-
+status: stable
 upstream:
   name: OpenStreetMap
   url: https://www.openstreetmap.org and [Leaflet](https://leafletjs.com)
-
 cover:
   alt: A map of the world
-  url: features/./maps.png
+  url: features/maps.png
+description: your own google maps
 
 Save places, share places, see where your contacts live, locate yourself and navigate.
 
@@ -462,7 +323,6 @@ Save places, share places, see where your contacts live, locate yourself and nav
 title: ... And more
 
 - Automated backups
-- 2FA authentication
 - Password manager (Alpha)
 - [Carnet](https://github.com/PhieF/CarnetDocumentation), Google Keep-like note taking, with Android, MacOS, Windows, and Linux apps
 - All Android apps available on [F-Droid](https://f-droid.org) if you prefer avoiding the play store altogether
@@ -488,8 +348,8 @@ Optionally:
 # Coming Soon
 
 title: VPN
-
 audiences: activist personal android ios desktop
+status: coming
 
 Avoid constantly compromised VPNs that always [end up selling out](https://www.reddit.com/r/PrivateInternetAccess/comments/dz2w53/our_merger_with_kape_technologies_addressing_your/), or getting detected and forbidden. Host your own.
 
@@ -498,31 +358,31 @@ https://github.com/trailofbits/algo
 <div class="page"/>
 
 title: Virtual Android
+audiences: personal activist
+status: coming
 
 Run your trapped Android device. Very useful for running, for example, a Whatsapp that doesn't transmit your info to Facebook.
 
 <div class="page"/>
 
 title: Streaming Service
-
-audiences: family personal android ios desktop
-
+audiences: family personal
+status: coming
 upstream:
   name: Streama
   url: https://streamaserver.org/
-
 cover:
   alt: Some movies on Streama
-  url: features/./streama.png
+  url: features/streama.png
+description: your own netflix
 
 Host your own [Netflix](https://www.netflix.com/sa-en/)
 
 <div class="page"/>
 
 title: Workflow Automation
-
-audiences: office personal android ios desktop
-
+audiences: office personal
+status: coming
 upstream:
   name: Nextcloud Flow
   url: https://nextcloud.com/blog/nextcloud-flow-makes-it-easy-to-automate-actions-and-workflows/
@@ -532,16 +392,15 @@ Trigger actions when certain events happen. For example, when a file is added to
 <div class="page"/>
 
 title: Automate and Integrate External Services
-
 audiences: office personal android ios desktop
-
+status: coming
 upstream:
   name: n8n
   url: https://n8n.io/
-
 cover:
   alt: An example workflow
-  url: features/./n8n.png
+  url: features/n8n.png
+description: automation
 
 Create triggers and automations to react to events. For example, get a Slack message every time a new deal get created in Pipedrive and additionally add it to a Google Sheets.
 

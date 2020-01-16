@@ -2,6 +2,7 @@
   external-link.software-repository-link(:href="url")
     fontAwesome(:icon="data.icon")
     fa-icon(i="dollar-sign" v-if="paid")
+    fab-icon(i="osi" v-if="osi")
     span {{ data.label }}
     fontAwesome(:icon="['fas','external-link-alt']")
 </template>
@@ -23,6 +24,10 @@ export default {
       required: true
     },
     paid:{
+      type: Boolean,
+      required: false
+    },
+    osi:{
       type: Boolean,
       required: false
     }

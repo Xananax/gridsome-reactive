@@ -2,6 +2,7 @@
 
 title: Notes
 audiences: office personal
+status: stable
 upstream:
   name: Nextcloud Text
   url: https://github.com/nextcloud/text
@@ -9,18 +10,25 @@ tags: Markdown
 applications:
   - platform: web
     url: https://apps.nextcloud.com/apps/text
+    osi: true
   - platform: windows
     url: https://github.com/pbek/QOwnNotes/releases/
+    osi: true
   - platform: linux
     url: https://www.qownnotes.org/
+    osi: true
   - platform: mac
     url: https://github.com/pbek/QOwnNotes/releases/
+    osi: true
   - platform: google
     url: https://play.google.com/store/apps/details?id=it.niedermann.owncloud.notes
+    osi: true
   - platform: f-droid
     url: https://f-droid.org/en/packages/it.niedermann.owncloud.notes/
+    osi: true
   - platform: ios
     url: https://apps.apple.com/us/app/cloudnotes-owncloud-notes/id813973264
+    osi: true
 cover:
   alt: A note being written
   url: features/notes.png

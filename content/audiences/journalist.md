@@ -1,5 +1,5 @@
 ---
-title: Activist
+title: Journalist
 description: writes things against their government
 ---
 

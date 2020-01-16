@@ -2,6 +2,7 @@
 
 title: File Storage and Syncing
 audiences: office activists family personal
+status: stable
 tags: Markdown
 upstream: 
   name: NextCloud Files
@@ -9,18 +10,25 @@ upstream:
 applications:
   - platform: web
     url: https://nextcloud.com/files/
+    osi: true
   - platform: linux
     url: https://nextcloud.com/install/#install-clients
+    osi: true
   - platform: mac
     url: https://nextcloud.com/install/#install-clients
+    osi: true
   - platform: windows
     url: https://nextcloud.com/install/#install-clients
+    osi: true
   - platform: google
     url: https://play.google.com/store/apps/details?id=com.nextcloud.client  
+    osi: true
   - platform: f-droid
     url: https://f-droid.org/packages/com.nextcloud.client/
+    osi: true
   - platform: ios
     url: https://itunes.apple.com/us/app/nextcloud/id1125420102?mt=8
+    osi: true
 cover: 
   alt: a spectrum of apps
   url: features/files.png

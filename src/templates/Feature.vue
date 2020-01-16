@@ -11,7 +11,7 @@
     .audiences.tags-list
       audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id" :title="audience.title")
     .software.tags-list
-      software-repository-link(v-for="edge in applications" :key="edge.platform" :url="edge.url" :platform="edge.platform" :paid="edge.paid")
+      software-repository-link(v-for="app in applications" :key="app.platform" :url="app.url" :platform="app.platform" :paid="app.paid" :osi="app.osi")
     hr
     vueRemarkContent
 </template>
@@ -61,6 +61,7 @@ query ($id: ID!) {
       platform
       url
       paid
+      osi
     }
   }
 }
