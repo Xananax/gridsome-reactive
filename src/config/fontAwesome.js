@@ -19,7 +19,8 @@ import {
   faWindows,
   faApple,
   faAppStoreIos,
-  faAndroid
+  faAndroid,
+  faGitAlt
 } from "@fortawesome/free-brands-svg-icons";
 // To know what icons are available, look into
 // https://fontawesome.com/icons?d=gallery&s=solid&m=free
@@ -37,7 +38,9 @@ import {
   faUser,
   faUsers,
   faUserSecret,
-  faExternalLinkAlt
+  faExternalLinkAlt,
+  faGlobe,
+  faDollarSign
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -62,6 +65,7 @@ library.add(
   faApple,
   faAppStoreIos,
   faAndroid,
+  faGitAlt,
   //
   faSpinner,
   faHome,
@@ -76,6 +80,8 @@ library.add(
   faUsers,
   faUserSecret,
   faExternalLinkAlt,
+  faGlobe,
+  faDollarSign
 );
 
 export default FontAwesomeIcon;
@@ -92,7 +98,8 @@ export const getPlatformIcon = getIconFor({
   windows: ['Windows','fab','windows'],
   google: ['Play Store','fab','google-play'],
   'f-droid': ['F-Droid','fab','android'],
-  ios: [ 'IOS', 'fab', 'app-store-ios' ]
+  ios: [ 'IOS', 'fab', 'app-store-ios' ],
+  web: [ 'Web', 'fas', 'globe' ]
 })
 
 export const getAudiencePlatformIcon = getIconFor({

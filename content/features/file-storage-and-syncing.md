@@ -3,7 +3,12 @@
 title: File Storage and Syncing
 audiences: office activists family personal
 tags: Markdown
+upstream: 
+  name: NextCloud Files
+  url: https://github.com/nextcloud/server
 applications:
+  - platform: web
+    url: https://nextcloud.com/files/
   - platform: linux
     url: https://nextcloud.com/install/#install-clients
   - platform: mac
@@ -16,7 +21,9 @@ applications:
     url: https://f-droid.org/packages/com.nextcloud.client/
   - platform: ios
     url: https://itunes.apple.com/us/app/nextcloud/id1125420102?mt=8
-cover: features/files.png
+cover: 
+  alt: a spectrum of apps
+  url: features/files.png
 description: Your own cloud storage
 
 ---

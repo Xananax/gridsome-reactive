@@ -1,6 +1,7 @@
 <template lang="pug">
   external-link.software-repository-link(:href="url")
     fontAwesome(:icon="data.icon")
+    fa-icon(i="dollar-sign" v-if="paid")
     span {{ data.label }}
     fontAwesome(:icon="['fas','external-link-alt']")
 </template>
@@ -20,6 +21,10 @@ export default {
     url:{
       type: String,
       required: true
+    },
+    paid:{
+      type: Boolean,
+      required: false
     }
   },
   computed:{

@@ -2,13 +2,16 @@
   Layout
     h1 {{ item.title }}
     g-image(
-      alt="Cover image"
+      :alt="item.cover.alt || 'Cover image'"
       :src="item.cover.url"
     )
+    h3 upstream
+      fab-icon(i="git-alt")
+      external-link(:href="upstream.url") {{ upstream.name }}
     .audiences.tags-list
       audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id" :title="audience.title")
     .software.tags-list
-      software-repository-link(v-for="edge in applications" :key="edge.platform" :url="edge.url" :platform="edge.platform")
+      software-repository-link(v-for="edge in applications" :key="edge.platform" :url="edge.url" :platform="edge.platform" :paid="edge.paid")
     hr
     vueRemarkContent
 </template>
@@ -30,6 +33,9 @@ export default {
     },
     audiences(){
       return this.$page.feature.audiences
+    },
+    upstream(){
+      return this.$page.feature.upstream
     }
   }
 };
@@ -41,6 +47,10 @@ query ($id: ID!) {
     title
     path
     cover (width: 420, blur: 10)
+    upstream {
+      name
+      url
+    }
     description
     audiences {
       id
@@ -50,6 +60,7 @@ query ($id: ID!) {
     applications {
       platform
       url
+      paid
     }
   }
 }

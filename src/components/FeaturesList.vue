@@ -1,8 +1,10 @@
 <template lang="pug">
   .features-list
-    p(v-for="feature in items" :key="feature.id") 
-      button-nav-link(:to="feature.path") {{ feature.title }}
-
+    .feature(v-for="feature in items" :key="feature.id") 
+      h2 {{ feature.title }}
+      g-image(:src="feature.cover.url") 
+      p {{ feature.description }}
+      button-nav-link(:to="feature.path") read more
 </template>
 
 <script>
@@ -33,6 +35,7 @@ query {
         applications {
           platform
           url
+          paid
         }
       }
     }
