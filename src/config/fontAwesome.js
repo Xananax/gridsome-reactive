@@ -22,6 +22,8 @@ import {
   faAndroid,
   faGitAlt,
   faOsi,
+  faChrome,
+  faFirefox,
 } from "@fortawesome/free-brands-svg-icons";
 // To know what icons are available, look into
 // https://fontawesome.com/icons?d=gallery&s=solid&m=free
@@ -68,6 +70,8 @@ library.add(
   faAndroid,
   faGitAlt,
   faOsi,
+  faChrome,
+  faFirefox,
   //
   faSpinner,
   faHome,
@@ -102,6 +106,8 @@ export const getPlatformIcon = getIconFor({
   'f-droid': ['F-Droid','fab','android'],
   ios: [ 'IOS', 'fab', 'app-store-ios' ],
   web: [ 'Web', 'fas', 'globe' ],
+  firefox: [ 'Firefox', 'fab', 'firefox' ],
+  chrome: [ 'Chrome', 'fab', 'chrome' ],
 })
 
 export const getAudiencePlatformIcon = getIconFor({

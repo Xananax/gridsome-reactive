@@ -1,17 +1,30 @@
 <template lang="pug">
   .features-list
-    .feature(v-for="feature in items" :key="feature.id") 
-      h2 {{ feature.title }}
-      g-image(:src="feature.cover.url") 
-      p {{ feature.description }}
-      button-nav-link(:to="feature.path") read more
+    h1 Features
+    slot(name="features" v-bind:features="features")
+      .feature(v-for="feature in features" :key="feature.id") 
+        h2 {{ feature.title }}
+        g-image(:src="feature.cover.url") 
+        p {{ feature.description }}
+        button-nav-link(:to="feature.path") read more
+    h1 Coming Soon
+    slot(name="comingSoon" v-bind:comingSoon="comingSoon")
+      .feature(v-for="feature in comingSoon" :key="feature.id") 
+        h2 {{ feature.title }}
+        g-image(:src="feature.cover.url") 
+        p {{ feature.description }}
+        button-nav-link(:to="feature.path") read more
 </template>
 
 <script>
 export default {
   computed: {
-    items() {
-      const { edges } = this.$static.allFeature 
+    features() {
+      const { edges } = this.$static.features
+      return edges.map(({node})=>node)
+    },
+    comingSoon() {
+      const { edges } = this.$static.comingSoon
       return edges.map(({node})=>node)
     }
   }
@@ -20,7 +33,27 @@ export default {
 
 <static-query>
 query {
-  allFeature{
+  features: allFeature(filter: { status: { eq: "stable" } }){
+    edges {
+      node {
+        id
+        title
+        path
+        cover (width: 200, height: 200, blur: 10)
+        description
+        audiences {
+          id
+          title
+        }
+        applications {
+          platform
+          url
+          paid
+        }
+      }
+    }
+  }
+  comingSoon: allFeature(filter: { status: { eq: "coming" } }){
     edges {
       node {
         id

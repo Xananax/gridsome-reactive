@@ -13,12 +13,15 @@ applications:
     osi: true
   - platform: windows
     url: https://github.com/pbek/QOwnNotes/releases/
+    name: qownNotes
     osi: true
   - platform: linux
     url: https://www.qownnotes.org/
+    name: qownNotes
     osi: true
   - platform: mac
     url: https://github.com/pbek/QOwnNotes/releases/
+    name: qownNotes
     osi: true
   - platform: google
     url: https://play.google.com/store/apps/details?id=it.niedermann.owncloud.notes
