@@ -24,6 +24,7 @@ import {
   faOsi,
   faChrome,
   faFirefox,
+  faOpera,
 } from "@fortawesome/free-brands-svg-icons";
 // To know what icons are available, look into
 // https://fontawesome.com/icons?d=gallery&s=solid&m=free
@@ -44,6 +45,7 @@ import {
   faExternalLinkAlt,
   faGlobe,
   faDollarSign,
+  faBook,
 } from "@fortawesome/free-solid-svg-icons";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
@@ -72,6 +74,7 @@ library.add(
   faOsi,
   faChrome,
   faFirefox,
+  faOpera,
   //
   faSpinner,
   faHome,
@@ -87,7 +90,8 @@ library.add(
   faUserSecret,
   faExternalLinkAlt,
   faGlobe,
-  faDollarSign
+  faDollarSign,
+  faBook,
 );
 
 export default FontAwesomeIcon;
@@ -108,6 +112,10 @@ export const getPlatformIcon = getIconFor({
   web: [ 'Web', 'fas', 'globe' ],
   firefox: [ 'Firefox', 'fab', 'firefox' ],
   chrome: [ 'Chrome', 'fab', 'chrome' ],
+  opera: [ 'Opera', 'fab', 'opera' ],
+  pocketbook: [ 'PocketBook', 'fas', 'book' ],
+  kobo: [ 'Kobo', 'fas', 'book' ],
+  kindle: [ 'Kindle', 'fas', 'book' ],
 })
 
 export const getAudiencePlatformIcon = getIconFor({

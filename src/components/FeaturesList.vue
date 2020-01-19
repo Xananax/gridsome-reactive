@@ -1,13 +1,12 @@
 <template lang="pug">
   .features-list
-    h1 Features
     slot(name="features" v-bind:features="features")
       .feature(v-for="feature in features" :key="feature.id") 
         h2 {{ feature.title }}
         g-image(:src="feature.cover.url") 
         p {{ feature.description }}
         button-nav-link(:to="feature.path") read more
-    h1 Coming Soon
+    slot(name="default")
     slot(name="comingSoon" v-bind:comingSoon="comingSoon")
       .feature(v-for="feature in comingSoon" :key="feature.id") 
         h2 {{ feature.title }}
