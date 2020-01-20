@@ -1,8 +1,5 @@
 <template lang="pug">
   Layout(:show-logo="false")
-    features-list
-      template(v-slot:comingSoon="{comingSoon}")
-        code {{ comingSoon }}
     hr
     audience-list
     hr
