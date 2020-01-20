@@ -22,18 +22,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.header
-  font-family "Stylish"
-  text-align center
-
-h1.header
-  font-size 35px
-  line-height 20px
-  padding 0.7em
-
-h2.header
-  font-size 30px
-  line-height 10px
-  padding 2em 0
 
 </style>

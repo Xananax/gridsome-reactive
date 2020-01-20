@@ -44,7 +44,5 @@ export default {
 </script>
 
 <style lang="stylus">
-  .software-repository-link
-    @extends .button
-    background-color mutedAccent
+  
 </style>

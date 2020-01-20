@@ -1,6 +1,4 @@
 import Buefy from 'buefy'
-import 'buefy/dist/buefy.css'
-import '@mdi/font/scss/materialdesignicons.scss'
 import '~/config/style'
 import '~/config/icons'
 

@@ -1,22 +1,29 @@
 <template lang="pug">
-  nav.horizontal-navigation
-    slot(name="before")
-    nav-link(
-      v-for="item in items"
-      :key="item.key"
-      :to="item.to"
-      :title="item.title"
-      )
-      component.nav-icon(v-if="item.icon && showIcons" :is="icon(item)")
-      span {{item.title}}
-    slot(name="after")
+  b-navbar
+    template(slot="brand")
+      b-navbar-item(tag="router-link" to="/")
+        img(src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png")
+    template(slot="start")
+      b-navbar-item(v-for="item in items" tag="router-link" :key="item.key" :to="item.to" :title="item.title")
+        component.nav-icon(v-if="item.icon && showIcons" :is="icon(item)")
+        span {{item.title}}
+    template(slot="end")
+      b-navbar-item(tag="div")
+        .buttons
+          a(class="button is-primary")
+            strong Sign up
+          a(class="button is-light") Log in
 </template>
 
 <script>
 
+import Logo from "@static/images/Logo.svg";
 import { getIcon } from '@/config/icons'
 
 export default {
+  components:{
+    Logo
+  },
   props:{
     items:{
       type: Array,
@@ -36,23 +43,6 @@ export default {
 </script>
 
 <style lang="stylus">
-.horizontal-navigation
-  display flex
-  flex-wrap wrap
-  justify-content space-evenly
-  align-content center
-
-.nav-link
-  display flex
-  align-items center
-  align-content center
-  line-height 1
-  text-decoration none
-  margin-right .3em
-  color inherit
-  &:last-child
-    margin-right 0
-
-.nav-icon
-  margin-right .1em
+.logo
+  width 20px
 </style>

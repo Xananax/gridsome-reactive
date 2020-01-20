@@ -1,12 +1,15 @@
 <template lang="pug">
-  .feature-summary(:id="id")
-    .feature-content
+  .card.feature-summary(:id="id")
+    .card-image
       g-link(:to="path")
         g-image.feature-cover(:src="cover.url") 
-      h3.feature-title 
+    .card-content
+      h3.title.is-4 
         g-link.feature-title-link(:to="path") {{ title }}
-      p.feature-body {{ description }}
-      g-link.feature-read-more(:to="path") read more
+      .content {{ description }}
+      .card-footer
+        .card-footer-item
+          g-link.feature-read-more(:to="path") read more
 </template>
 
 <script>
@@ -43,7 +46,13 @@ export default {
 </script>
 
 <style lang="stylus">
-  .feature-summary
-    @extend $card
-    @extend $avoid-column-break
+.feature-summary
+  width 320px
+  column-break-inside avoid
+  -webkit-column-break-inside avoid
+  page-break-inside avoid
+  break-inside avoid
+  margin-bottom 1em
+  img
+    width 100%
 </style>

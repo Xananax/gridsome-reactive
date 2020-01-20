@@ -73,6 +73,5 @@ query {
 </static-query>
 
 <style lang="stylus">
-  .features-list
-    @extend $card-list
+  
 </style>

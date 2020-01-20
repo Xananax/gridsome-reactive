@@ -5,7 +5,5 @@
 </template>
 
 <style lang="stylus">
-  .chonky-button
-    @extends $oblique-button
-    font-size 1.5em
+
 </style>

@@ -31,7 +31,5 @@ export default {
 </script>
 
 <style lang="stylus">
-  .audience-link
-    @extends .button
-    background-color mutedAccent
+  
 </style>

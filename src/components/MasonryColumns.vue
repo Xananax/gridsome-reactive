@@ -69,5 +69,8 @@ export default {
   @media only screen and (min-width: 960px)
     column-count 3
   & > *
-    @extend $avoid-column-break
+    column-break-inside avoid
+    -webkit-column-break-inside avoid
+    page-break-inside avoid
+    break-inside avoid
 </style>

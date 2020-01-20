@@ -1,21 +1,24 @@
 <template lang="pug">
-  .wrapper
-    header.header
-      horizontal-navigation(:items="menuItems" :showIcons="true")
-    .main
-      article.body
-        slot
-      footer.footer
-        social-bar
-        p.
-          Built with 
-          #[a(class="link" href="//gridsome.org" target="_blank") Gridsome] 
-          & Made with #[b-icon(icon="heart" size="is-small" type="is-primary")] by 
-          #[a(class="link" :href="author.url" target="_blank") {{author.name}}]
+  .main
+    section.section
+      .container
+        horizontal-navigation(:items="menuItems" :showIcons="true")
+    section.section
+      .container
+        article.body
+          slot
+        footer.footer
+          social-bar
+          .content.has-text-centered
+            p.
+              Built with 
+              #[a(class="link" href="//gridsome.org" target="_blank") Gridsome] 
+              & Made with #[b-icon(icon="heart" size="is-small" type="is-primary")] by 
+              #[a(class="link" :href="author.url" target="_blank") {{author.name}}]
 </template>
 
 <script>
-import Logo from "../../static/images/Logo.svg";
+import Logo from "@static/images/Logo.svg";
 import pageList from "../config/pageList";
 
 const insertIndex = pageList.indexOf("_") || pageList.length;
@@ -116,39 +119,3 @@ query {
   }
 }
 </static-query>
-
-<style lang="stylus">
-.main
-  background backgroundColor2
-  padding siteMargin 0
-  overflow auto
-  margin 1em
-  //box-shadow 3px 3px 12px rgba(0,0,0,.2)
-
-.header, .footer, .body
-  @extend $wrapper
-
-.header
-  padding 1em 0
-
-.logo
-  width 50px
-  height 50px
-
-.footer
-  margin-top siteMargin * 1.5
-  text-align center
-  font-size .8em
-
-.horizontal-nav
-  color #fdfdfd
-  text-shadow 1px 1px 3px rgba(0,0,0,.3)
-
-.body
-  p:first-of-type
-    img
-      max-width 320px
-      display block
-      @extend $wrapper
-  
-</style>
