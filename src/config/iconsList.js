@@ -1,3 +1,6 @@
+// find the icons you want at 
+// https://materialdesignicons.com/
+// add them here:
 export { default as IconMastodon } from 'vue-material-design-icons/Mastodon.vue'
 export { default as IconTwitter } from 'vue-material-design-icons/Twitter.vue'
 export { default as IconGitlab } from 'vue-material-design-icons/Gitlab.vue'
