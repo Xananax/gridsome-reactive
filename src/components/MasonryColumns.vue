@@ -7,7 +7,6 @@
 
 const resizeItems = (grid, items) => {
   const columnsNumber = getComputedStyle(grid).columnCount
-  console.log(columnsNumber)
   if(grid.dataset.columnsNumber === columnsNumber){
     return
   }
