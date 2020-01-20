@@ -1,6 +1,6 @@
 ---
 
-title: Android SMS Backup
+title: SMS Backup
 audiences: personal android
 status: stable
 upstream:

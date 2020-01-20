@@ -1,11 +1,8 @@
 <template lang="pug">
   .features-list
     slot(name="features" v-bind:features="features")
-      .feature(v-for="feature in features" :key="feature.id") 
-        h2 {{ feature.title }}
-        g-image(:src="feature.cover.url") 
-        p {{ feature.description }}
-        button-nav-link(:to="feature.path") read more
+      masonry-columns
+        feature-summary(v-for="(feature, index) in features" :key="feature.id" v-bind="feature" :index="index") 
     slot(name="default")
     slot(name="comingSoon" v-bind:comingSoon="comingSoon")
       .feature(v-for="feature in comingSoon" :key="feature.id") 
@@ -38,7 +35,7 @@ query {
         id
         title
         path
-        cover (width: 200, height: 200, blur: 10)
+        cover (width: 300)
         description
         audiences {
           id
@@ -58,7 +55,7 @@ query {
         id
         title
         path
-        cover (width: 200, height: 200, blur: 10)
+        cover (width: 300)
         description
         audiences {
           id
@@ -74,3 +71,8 @@ query {
   }
 }
 </static-query>
+
+<style lang="stylus">
+  .features-list
+    @extend $card-list
+</style>

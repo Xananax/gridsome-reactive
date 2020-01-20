@@ -1,6 +1,6 @@
 ---
 
-titletitle: Secure, Decentralized Chat
+title: Secure, Decentralized Chat
 audiences: office activist family personal
 status: stable
 upstream:
