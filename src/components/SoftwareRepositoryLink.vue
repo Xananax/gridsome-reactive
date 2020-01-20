@@ -1,18 +1,21 @@
 <template lang="pug">
   external-link.software-repository-link(:href="url")
-    fontAwesome(:icon="data.icon")
-    fa-icon(i="dollar-sign" v-if="paid")
-    fab-icon(i="osi" v-if="osi")
-    span {{ data.label }}
-    fontAwesome(:icon="['fas','external-link-alt']")
+    component(:is="icon" :title="platform" decorative)
+    icon-paid(v-if="paid" title="paid application")
+    icon-osi(v-if="osi", title="open source application")
+    span {{ platform }}
+    icon-external.icon-smallest(title="opens in new tab")
 </template>
 
 <script>
-import fontAwesome, { getPlatformIcon } from '@/config/fontAwesome'
+
+import { getIcon, IconPaid, IconOsi, IconExternal } from '@/config/icons'
 
 export default {
   components:{
-    fontAwesome
+    IconPaid,
+    IconOsi,
+    IconExternal,
   },
   props:{
     platform:{
@@ -33,8 +36,8 @@ export default {
     }
   },
   computed:{
-    data(){
-      return getPlatformIcon(this.platform)
+    icon(){
+      return getIcon(this.platform)
     }
   }
 }

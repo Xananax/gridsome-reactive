@@ -1,20 +1,19 @@
 <template lang="pug">
-  a.social-link(:href="url" :title="comment") 
-    fontAwesome(:icon="icon" v-bind="$attrs")
-    span {{ name }}
+  a.social-link(:href="url" :title="comment")
+    component(:is="data.icon" :title="comment")
+    span.social-link-label {{ name }}
 </template>
 
 <script>
-import fontAwesome from "@/config/fontAwesome";
+
+import { getIcon } from '@/config/icons'
+
 export default {
-  components: {
-    fontAwesome
-  },
   props: {
     name: { type: String, required: true },
     protocol: { type: String, required: false },
     address: { type: String, required: false },
-    icon: { type: Array, required: true },
+    icon: { type: String, required: false },
     url: { type: String, required: true }
   },
   computed: {
@@ -38,13 +37,15 @@ export default {
         return `Send coins to ${address}`;
       }
       return `${name}`;
+    },
+    data(){
+      return getIcon(this.icon || this.name)
     }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
-.social-link
-  span
-    display none
+.social-link-label
+  display none
 </style>

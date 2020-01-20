@@ -4,7 +4,7 @@
       g-link(:to="path")
         g-image.feature-cover(:src="cover.url") 
       h3.feature-title 
-        g-link.feature-title-link(:to="path") {{index}} {{ title }}
+        g-link.feature-title-link(:to="path") {{ title }}
       p.feature-body {{ description }}
       g-link.feature-read-more(:to="path") read more
 </template>
@@ -37,9 +37,6 @@ export default {
     },
     applications: {
       type: Array
-    },
-    index:{
-      type: Number
     }
   }
 }

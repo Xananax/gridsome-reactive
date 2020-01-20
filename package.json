@@ -20,6 +20,8 @@
     "@gridsome/source-filesystem": "^0.6.0",
     "@gridsome/transformer-remark": "^0.3.0",
     "@gridsome/vue-remark": "^0.1.9",
+    "@mdi/font": "^4.8.95",
+    "buefy": "^0.8.9",
     "gridsome": "^0.7.0",
     "gridsome-plugin-feed": "^1.0.2",
     "gridsome-plugin-pug": "^0.0.3",
@@ -34,6 +36,7 @@
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "typeface-stylish": "^0.0.65",
+    "vue-material-design-icons": "^4.4.0",
     "vue-svg-loader": "^0.15.0",
     "vue-template-compiler": "^2.6.11"
   },

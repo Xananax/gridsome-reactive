@@ -6,23 +6,28 @@
       :src="item.cover.url"
     )
     h3 upstream
-      fab-icon(i="git-alt")
-      external-link(:href="upstream.url") {{ upstream.name }}
+      external-link(:href="upstream.url")
+        icon-git
+        span {{ upstream.name }}
     .audiences.tags-list
       audience-link(v-for="audience in audiences" :key="audience.id" :path="audience.path" :kind="audience.id" :title="audience.title")
     .software.tags-list
-      software-repository-link(v-for="app in applications" :key="app.platform" :url="app.url" :platform="app.platform" :paid="app.paid" :osi="app.osi")
+      software-repository-link(v-for="(app,index) in applications" :key="index" :url="app.url" :platform="app.platform" :paid="app.paid" :osi="app.osi")
     hr
     vueRemarkContent
 </template>
 
 <script>
+import { getIcon, IconGit } from '@/config/icons'
 
 export default {
   metaInfo(){
     return{
       title: this.item.title
     }
+  },
+  components:{
+    IconGit
   },
   computed: {
     item() {

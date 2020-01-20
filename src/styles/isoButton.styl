@@ -18,7 +18,7 @@ curve = cubic-bezier(.75, -0.5, 0, 1.75)
   <br/><br/>
 **/
 
-.oblique
+$oblique-button
   position relative
   padding 1em 1.5em
   border 0
@@ -67,14 +67,14 @@ curve = cubic-bezier(.75, -0.5, 0, 1.75)
       left - buttonDepth
       background-image linear-gradient(to left, grDark1, grDark2 gradientExtend)
   &.top.left
-    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), -.1em -.1em .2em rgba(0, 0, 0, .3)
+    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), .2em .2em .6em rgba(0, 0, 0, .5)
     &:before
       left 0
       transform skewX(45deg)
     &:after
       transform skewY(45deg)
   &.top.right
-    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), .1em -.1em .2em rgba(0, 0, 0, .3)
+    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), -.2em .2em .4em rgba(0, 0, 0, .3)
     &:before
       left 0
       transform skewX(-45deg)
@@ -82,7 +82,7 @@ curve = cubic-bezier(.75, -0.5, 0, 1.75)
       top buttonDepth
       transform skewY(-45deg)
   &.bottom.right
-    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), .1em .1em .2em rgba(0, 0, 0, .3)
+    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), -.2em -.2em .4em rgba(0, 0, 0, .3)
     &:before
       left - buttonDepth
       transform skewX(45deg)
@@ -90,7 +90,7 @@ curve = cubic-bezier(.75, -0.5, 0, 1.75)
       top - buttonDepth
       transform skewY(45deg)
   &.bottom.left
-    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), -.1em .1em .4em rgba(0, 0, 0, .3)
+    box-shadow inset 0 0 .4em rgba(0, 0, 0, 0), .2em -.2em .4em rgba(0, 0, 0, .3)
     &:before
       right - buttonDepth
       transform skewX(-45deg)

@@ -2,7 +2,7 @@
   .features-list
     slot(name="features" v-bind:features="features")
       masonry-columns
-        feature-summary(v-for="(feature, index) in features" :key="feature.id" v-bind="feature" :index="index") 
+        feature-summary(v-for="feature in features" :key="feature.id" v-bind="feature") 
     slot(name="default")
     slot(name="comingSoon" v-bind:comingSoon="comingSoon")
       .feature(v-for="feature in comingSoon" :key="feature.id") 

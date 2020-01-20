@@ -12,21 +12,18 @@ social:
   # src/config/fontAwesome.js
   - name: email
     url: mailto:me@xananax.com
-    icon: fas envelope
   - name: mastodon
     url: //mastodon.gamedev.place/@xananax
   - name: matrix
     url: //matrix.to/#/@xananax:mutnt.io
-    icon: fas comment-dots
   - //gitlab.com/xananax
   - url: //codesandbox.io/u/Xananax
-    icon: fas code
   - //reddit.com/u/xananax
   - //twitter.com/xananax
-  - //github.com/xananax
+  - url: //github.com/xananax
   - name: telegram
     url: //t.me/@xananax
   - //join.skype.com/invite/nqXVCeXQ2uZM
   - //codepen.io/Xananax
-  - //keybase.io/xananax
+  - url: //keybase.io/xananax
   - //www.linkedin.com/in/jadsarout/

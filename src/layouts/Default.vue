@@ -6,12 +6,12 @@
       article.body
         slot
       footer.footer
-        p 
-          span Built with 
-          a(class="link" href="//gridsome.org" target="_blank") Gridsome 
-          span & Made with ❤️ by 
-          a(class="link" :href="author.url" target="_blank") {{author.name}}
         social-bar
+        p.
+          Built with 
+          #[a(class="link" href="//gridsome.org" target="_blank") Gridsome] 
+          & Made with #[b-icon(icon="heart" size="is-small" type="is-primary")] by 
+          #[a(class="link" :href="author.url" target="_blank") {{author.name}}]
 </template>
 
 <script>

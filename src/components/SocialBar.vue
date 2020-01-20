@@ -12,12 +12,12 @@ export default {
       const feedItems = [
         {
           name: "RSS",
-          icon: ["fas", "rss"],
+          icon: "rss",
           url: `${siteUrl}/feed.xml`
         },
         {
           name: "Atom",
-          icon: ["fas", "atom"],
+          icon: "atom",
           url: `${siteUrl}/feed.atom`
         }
       ];
@@ -43,14 +43,12 @@ query {
 </static-query>
 
 <style lang="stylus">
-.social-bar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
+.social-bar
+  display flex
+  flex-wrap wrap
+  justify-content center
+  align-content center
 
-  .social-link {
-    margin: 0.3em;
-  }
-}
+  .social-link
+    margin 0.3em
 </style>

@@ -7,12 +7,15 @@
       :to="item.to"
       :title="item.title"
       )
-      fa-icon.nav-icon(v-if="item.icon && showIcons" :i="item.icon")
+      component.nav-icon(v-if="item.icon && showIcons" :is="icon(item)")
       span {{item.title}}
     slot(name="after")
 </template>
 
 <script>
+
+import { getIcon } from '@/config/icons'
+
 export default {
   props:{
     items:{
@@ -22,6 +25,11 @@ export default {
     showIcons:{
       type: Boolean,
       default: false
+    }
+  },
+  methods:{
+    icon(item){
+      return this.showIcons && item.icon && getIcon(item.icon)
     }
   }
 }

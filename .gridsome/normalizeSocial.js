@@ -36,8 +36,8 @@ const parseItem = provider => {
     ? "number"
     : protocol;
   const icon = provider.icon
-    ? provider.icon.split(/\s+/g)
-    : ["fab", name.toLowerCase()];
+    ? provider.icon.trim()
+    : name.toLowerCase();
   const url = protocol + (is_web ? "://" : ":") + address;
   return { name, protocol, address, icon, url };
 };

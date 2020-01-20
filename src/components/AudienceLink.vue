@@ -1,16 +1,13 @@
 <template lang="pug">
   g-link.audience-link(:to="path")
-    fontAwesome.icon(:icon="data.icon")
+    component(:is="icon")
     span.label {{ title }}
 </template>
 
 <script>
-import fontAwesome, { getAudiencePlatformIcon } from '@/config/fontAwesome'
+import { getIcon } from '@/config/icons'
 
 export default {
-  components:{
-    fontAwesome
-  },
   props:{
     kind:{
       type: String,
@@ -26,8 +23,8 @@ export default {
     }
   },
   computed:{
-    data(){
-      return getAudiencePlatformIcon(this.kind)
+    icon(){
+      return getIcon(this.kind)
     }
   }
 }
