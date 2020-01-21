@@ -1,5 +1,5 @@
 <template lang="pug">
-  .main
+  .main(v-bind="{...$props, ...$attrs}")
     section.section
       .container
         horizontal-navigation(:items="menuItems" :showIcons="true")
@@ -12,7 +12,7 @@
           .content.has-text-centered
             p.
               Built with 
-              #[a(class="link" href="//gridsome.org" target="_blank") Gridsome] 
+              #[g-link(class="link" to="/made-with/site") Gridsome] 
               & Made with #[b-icon(icon="heart" size="is-small" type="is-primary")] by 
               #[a(class="link" :href="author.url" target="_blank") {{author.name}}]
 </template>

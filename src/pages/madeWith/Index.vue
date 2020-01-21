@@ -1,12 +1,14 @@
 <template lang="pug">
   Layout(:show-logo="false")
-    p blah blah
+    h1.title.is-4 Made With
+    ul
+      li: g-link(to="/made-with/site") site
 </template>
 
 <script>
 export default {
   metaInfo: {
-    title: 'Welcome'
+    title: 'Made With'
   }
 }
 </script>
