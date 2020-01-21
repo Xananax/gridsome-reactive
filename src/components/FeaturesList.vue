@@ -71,7 +71,3 @@ query {
   }
 }
 </static-query>
-
-<style lang="stylus">
-  
-</style>

@@ -1,7 +1,6 @@
 <template lang="pug">
   a.social-link(:href="url" :title="comment")
     component(:is="data.icon" :title="comment")
-    span.social-link-label {{ name }}
 </template>
 
 <script>
@@ -44,8 +43,3 @@ export default {
   }
 };
 </script>
-
-<style lang="stylus" scoped>
-.social-link-label
-  display none
-</style>

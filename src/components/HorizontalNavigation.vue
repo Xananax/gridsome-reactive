@@ -41,8 +41,3 @@ export default {
   }
 }
 </script>
-
-<style lang="stylus">
-.logo
-  width 20px
-</style>

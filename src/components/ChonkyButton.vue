@@ -3,7 +3,3 @@
     slot
       ok
 </template>
-
-<style lang="stylus">
-
-</style>

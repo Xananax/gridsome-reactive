@@ -1,6 +1,6 @@
 <template lang="pug">
-    .social-bar
-        social-link(v-for="provider in socialItems" v-bind="provider" :key="provider.url")
+  .social-bar
+    social-link(v-for="provider in socialItems" v-bind="provider" :key="provider.url")
 </template>
 
 <script>

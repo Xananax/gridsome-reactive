@@ -1,5 +1,5 @@
 <template lang="pug">
-  component(:is="tag").header
+  component(:is="tag" :class="titleClass").header
     slot
 </template>
 
@@ -16,11 +16,11 @@ export default {
       const { level } = this
       const tag = "h" + (level > 0 && !isNaN(level) ? level : 1 )
       return tag
+    },
+    titleClass(){
+      const { level } = this
+      return `title is-${level || 3}`
     }
   }
 }
 </script>
-
-<style lang="stylus" scoped>
-
-</style>
