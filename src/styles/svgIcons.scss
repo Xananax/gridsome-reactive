@@ -1,0 +1,62 @@
+.button {
+  .icon{
+    position: relative;
+    top: -0.05rem;
+  }
+
+  .material-design-icon{
+    position: relative;
+    transition: all .3s ease-out;
+    margin:0;
+  }
+
+  .material-design-icon svg{
+    display: inline-block;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+    position: relative;
+    vertical-align: middle;
+    width: 1.2rem;
+    height: 1.2rem;
+    //top: -0.1rem;
+    margin-right: .1em
+  }
+  
+  &.is-small {
+    .material-design-icon svg{
+      width:  .9rem;
+      height: .9rem;
+    }
+    .icon{
+      top: -0.05rem;
+    }
+  }
+  
+  &.is-medium {
+    .material-design-icon svg{
+      width:  1.5rem;
+      height: 1.5rem;
+    }
+    .icon{
+      top: -0.1rem;
+    }
+  }
+  
+  &.is-large {
+    .material-design-icon svg{
+      width:  1.8rem;
+      height: 1.8rem;
+    }
+    .icon{
+      top: -0.16rem;
+    }
+  }
+
+  .material-design-icon:nth-of-type(2){
+    position: absolute;
+    left:.1em;
+    z-index: 0;
+    opacity: .5;
+  }
+}

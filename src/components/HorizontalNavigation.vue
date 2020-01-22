@@ -2,17 +2,18 @@
   b-navbar
     template(slot="brand")
       b-navbar-item(tag="router-link" to="/")
-        img(src="https://raw.githubusercontent.com/buefy/buefy/dev/static/img/buefy-logo.png")
-    template(slot="start")
-      b-navbar-item(v-for="item in items" tag="router-link" :key="item.key" :to="item.to" :title="item.title")
-        component.nav-icon(v-if="item.icon && showIcons" :is="icon(item)")
-        span {{item.title}}
+        img(src='http://bulma.io/images/bulma-type-white.png' alt='Logo')
+    //template(slot="start")
     template(slot="end")
-      b-navbar-item(tag="div")
-        .buttons
-          a(class="button is-primary")
-            strong Sign up
-          a(class="button is-light") Log in
+      .tabs.is-right
+        ul
+          g-link(v-for="item in items" tag="li" :key="item.key" :to="item.to" :title="item.title" v-slot="{href, route, navigate, isActive, isExactActive}")
+            li(:class="[isActive && 'is-active', isExactActive && 'is-exact-active']")
+              a(:href="href" @click="navigate")
+                //component.nav-icon(v-if="item.icon && showIcons" :is="icon(item)")
+                span {{item.title}}
+        b-navbar-item(tag="div")
+          a.button.is-white.is-outlined Sign up
 </template>
 
 <script>

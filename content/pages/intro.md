@@ -19,7 +19,7 @@ Press that chonky button and get freed from Google.
   Free Me
 </chonky-button>
 
-## Reclaim  Ownership of Your Data
+## Reclaim Ownership of Your Data
 
 ## What is it?
 

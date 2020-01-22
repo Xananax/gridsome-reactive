@@ -4,7 +4,13 @@
 </template>
 
 <script>
+
+import Layout from '@/layouts/Home'
+
 export default {
+  components:{
+    Layout
+  },
   metaInfo: {
     title: 'Welcome'
   }
