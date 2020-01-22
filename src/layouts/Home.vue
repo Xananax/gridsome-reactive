@@ -1,5 +1,5 @@
 <template lang="pug">
-layout-data(v-slot="{ metaInfo, author, menuItems}")
+layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences }")
   .main
     .hero.is-info.is-medium.is-bold
       .hero-head
@@ -8,57 +8,45 @@ layout-data(v-slot="{ metaInfo, author, menuItems}")
       .hero-body
         .container.has-text-centered
           h1.title Reclaim Ownership of Your Data
-          h2.subtitle free yourself from surveillance and dependency by pressing this large button
+          h2.subtitle We give you all the tools you need in your life & work, owned by you, stored on hardware owned by you 
           button.button-free-me.button.is-primary.is-large
             span.icon
-              icon-free-me.icon-free-me
-              icon-free-me-2.icon-free-me-2
-            span Free Me
+              icon-free-me.icon-free-me(decorative)
+              icon-free-me-2.icon-free-me-2(decorative)
+            span Start Migration
     .box.cta
       p.has-text-centered
-        span.tag.is-primary New
-        |  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        span.tag.is-primary In short
+        |  We give you all the tools you need in your life & work, owned by you, stored on your hardware 
     section.container
-      .columns.features
-        .column.is-4
-          .card.is-shady
-            .card-image.has-text-centered
-              i.fa.fa-paw
-            .card-content
-              .content
-                h4 Tristique senectus et netus et. 
-                p
-                  | Purus semper eget duis at tellus at urna condimentum mattis. Non blandit massa enim nec. Integer enim neque volutpat ac tincidunt vitae semper quis. Accumsan tortor posuere ac ut consequat semper viverra nam.
-                p
-                  a(href='#') Learn more
-        .column.is-4
-          .card.is-shady
-            .card-image.has-text-centered
-              i.fa.fa-empire
-            .card-content
-              .content
-                h4 Tempor orci dapibus ultrices in.
-                p
-                  | Ut venenatis tellus in metus vulputate. Amet consectetur adipiscing elit pellentesque. Sed arcu non odio euismod lacinia at quis risus. Faucibus turpis in eu mi bibendum neque egestas cmonsu songue. Phasellus vestibulum lorem
-                  | sed risus.
-                p
-                  a(href='#') Learn more
-        .column.is-4
-          .card.is-shady
-            .card-image.has-text-centered
-              i.fa.fa-apple
-            .card-content
-              .content
-                h4  Leo integer malesuada nunc vel risus. 
-                p
-                  | Imperdiet dui accumsan sit amet nulla facilisi morbi. Fusce ut placerat orci nulla pellentesque dignissim enim. Libero id faucibus nisl tincidunt eget nullam. Commodo viverra maecenas accumsan lacus vel facilisis.
-                p
-                  a(href='#') Learn more
+      .thingy(style="display:flex;flex-wrap:wrap;justify-content: space-evenly;;align-content: center;")
+        .card(style="width: 30%" v-for="feature in highlights" :key="feature.title")
+          .card-image.has-text-centered
+            component(v-if="feature.icon" :is="'icon-'+feature.icon" decorative)
+            component(v-if="feature.subIcon" :is="'icon-'+feature.subIcon" decorative)
+          .card-content
+            .content
+              h4 {{ feature.title }}
+              p {{ feature.description }}
+              p
+                a.read-more(href='#') Learn more #[icon-read-more(decorative)]
       .intro.column.is-8.is-offset-2
-        h2.title Perfect for developers or designers!
+        h2.title
+          span Perfect for 
+          audience-link.is-large.is-primary(v-for="audience in audiences" :key="audience.path" :path="audience.path" :kind="audience.id" :title="audience.title")  
         br
         p.subtitle
           | Vel fringilla est ullamcorper eget nulla facilisi. Nulla facilisi nullam vehicula ipsum a. Neque egestas congue quisque egestas diam in arcu cursus.
+    section.container
+      ul
+        li gmail -> nextcloud mail
+        li gmail
+        li gmail
+        li gmail
+        li gmail
+        li gmail
+        li gmail
+    section.container
       .sandbox
         .tile.is-ancestor
           .tile.is-parent.is-shady
@@ -207,6 +195,10 @@ layout-data(v-slot="{ metaInfo, author, menuItems}")
                 span.tag.is-dark Bulma Templates
                 span.tag.is-info MIT license
 </template>
+
+<static-query>
+
+</static-query>
 
 <style lang="scss" scoped>
 .icon-free-me-2{

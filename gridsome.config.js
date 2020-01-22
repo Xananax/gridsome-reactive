@@ -42,6 +42,7 @@ module.exports = {
     }),
     createRemarkContentType("Audience"),
     createRemarkContentType("Post"),
+    createRemarkContentType("Highlight"),
     createRemarkContentType("MarkPage", {
       pathPrefix: "/",
       baseDir: "./content/pages"

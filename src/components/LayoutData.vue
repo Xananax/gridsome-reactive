@@ -9,9 +9,9 @@ export default {
     Logo
   },
   render() {
-    const { metaInfo, author, menuItems } = this
+    const { metaInfo, author, menuItems, highlights, audiences } = this
     return this.$scopedSlots.default({
-      metaInfo, author, menuItems
+      metaInfo, author, menuItems, highlights, audiences
     })
   },
   metaInfo() {
@@ -71,6 +71,12 @@ export default {
       const items = pageList.slice();
       items.splice(insertIndex, 1, ...markPages);
       return items;
+    },
+    highlights(){
+      return this.$static.highlights.edges.map( ({ node }) => node)
+    },
+    audiences(){
+      return this.$static.audiences.edges.map( ({ node }) => node)
     }
   }
 };
@@ -97,6 +103,28 @@ query {
   pages: allMarkPage {
     totalCount
     edges {
+      node {
+        id
+        title
+        path
+      }
+    }
+  }
+  highlights: allHighlight(sortBy: "rank", order: ASC) {
+    totalCount
+    edges {
+      node {
+        rank
+        title
+        icon
+        subIcon
+        description
+      }
+    }
+  }
+  audiences: allAudience{
+    totalCount
+    edges{
       node {
         id
         title

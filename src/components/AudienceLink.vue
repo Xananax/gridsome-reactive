@@ -1,7 +1,8 @@
 <template lang="pug">
-  g-link.audience-link(:to="path")
-    component(:is="icon")
-    span.label {{ title }}
+  g-link.button(:to="path")
+    span.icon
+      component(:is="icon")
+    span {{ title }}
 </template>
 
 <script>
