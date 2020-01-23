@@ -1,11 +1,11 @@
 <template lang="pug">
-  a.social-link(:href="url" :title="comment")
-    component(:is="data.icon" :title="comment")
+  button.button.is-light.social-link(:href="url" :title="comment")
+    span.icon
+      component(:is="iconName" :title="comment")
+    span.label {{ name }}
 </template>
 
 <script>
-
-import { getIcon } from '@/config/icons'
 
 export default {
   props: {
@@ -37,8 +37,8 @@ export default {
       }
       return `${name}`;
     },
-    data(){
-      return getIcon(this.icon || this.name)
+    iconName(){
+      return 'icon-'+(this.icon || this.name)
     }
   }
 };

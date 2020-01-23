@@ -154,21 +154,10 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
           .column.is-3.is-offset-2
             h2
               strong Category
-            ul
-              li
-                a(href='#') Lorem ipsum dolor sit amet
-              li
-                a(href='#') Vestibulum errato isse
-              li
-                a(href='#') Lorem ipsum dolor sit amet
-              li
-                a(href='#') Aisia caisia
-              li
-                a(href='#') Murphy&apos;s law
-              li
-                a(href='#') Flimsy Lavenrock
-              li
-                a(href='#') Maven Mousie Lavender
+            social-data(#default="{ socialItems }")
+              ul
+                li(v-for="provider in socialItems" :key="provider.url")
+                  social-link.is-text(v-bind="provider" )
           .column.is-3
             h2
               strong Category
@@ -187,7 +176,7 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
                 a(href='#') Course Correction
               li
                 a(href='#') Better Angels
-          .column.is-4
+          .column.is-3
             h2
               strong Category
             ul
@@ -202,14 +191,10 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
               li
                 a(href='#') Future Shock
         .content.has-text-centered
-          p
-            a.icon(href='https://github.com/BulmaTemplates/bulma-templates')
-              i.fa.fa-github
           .control.level-item
-            a(href='https://github.com/BulmaTemplates/bulma-templates')
-              .tags.has-addons
-                span.tag.is-dark Bulma Templates
-                span.tag.is-info MIT license
+            .tags.has-addons
+              span.tag.is-dark 7isme
+              span.tag.is-info MIT license
 </template>
 
 <static-query>

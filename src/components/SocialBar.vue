@@ -1,46 +1,10 @@
 <template lang="pug">
-  .social-bar
-    social-link(v-for="provider in socialItems" v-bind="provider" :key="provider.url")
+  social-data(#default="{ socialItems }")
+    .social-bar
+      .social-link(v-for="provider in socialItems" :key="provider.url")
+        slot(name="provider" v-bind:provider="provider")
+          social-link(v-bind="provider" )
 </template>
-
-<script>
-export default {
-  computed: {
-    socialItems() {
-      const { social, siteUrl } = this.$static.metadata;
-      const protocol = "https";
-      const feedItems = [
-        {
-          name: "RSS",
-          icon: "rss",
-          url: `${siteUrl}/feed.xml`
-        },
-        {
-          name: "Atom",
-          icon: "atom",
-          url: `${siteUrl}/feed.atom`
-        }
-      ];
-      return [...social, ...feedItems];
-    }
-  }
-};
-</script>
-
-<static-query>
-query {
-  metadata {
-    siteUrl
-    social {
-      name, 
-      protocol, 
-      address, 
-      icon, 
-      url
-    }
-  }
-}
-</static-query>
 
 <style lang="stylus">
 .social-bar
