@@ -3,6 +3,7 @@
 title: Tasks
 audiences: office android ios desktop
 status: stable
+icon: feature-tasks
 upstream:
   name: Nextcloud Tasks
   url: https://github.com/nextcloud/tasks/

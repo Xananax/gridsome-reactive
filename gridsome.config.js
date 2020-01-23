@@ -43,6 +43,9 @@ module.exports = {
     createRemarkContentType("Audience"),
     createRemarkContentType("Post"),
     createRemarkContentType("Highlight"),
+    createRemarkContentType("Prism", {
+      refs: { alternatives: { typeName: 'Feature'} }
+    }),
     createRemarkContentType("MarkPage", {
       pathPrefix: "/",
       baseDir: "./content/pages"

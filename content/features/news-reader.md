@@ -3,6 +3,7 @@
 title: News Reader
 audiences: personal
 status: stable
+icon: feature-news-reader
 upstream: 
   name: NextCloud News Reader
   url: https://github.com/nextcloud/news

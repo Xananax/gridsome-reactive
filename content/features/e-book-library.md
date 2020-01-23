@@ -2,6 +2,7 @@
 title: E-book library
 audiences: personal
 status: stable
+icon: feature-e-book-library
 upstream:
   name: Files OPDS
   url: https://github.com/Yetangitu/owncloud-apps/tree/master/files_opds

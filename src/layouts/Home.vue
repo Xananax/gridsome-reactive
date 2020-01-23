@@ -1,5 +1,5 @@
 <template lang="pug">
-layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences }")
+layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms }")
   .main
     .hero.is-info.is-medium.is-bold
       .hero-head
@@ -20,16 +20,16 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences }")
         |  We give you all the tools you need in your life & work, owned by you, stored on your hardware 
     section.container
       .thingy(style="display:flex;flex-wrap:wrap;justify-content: space-evenly;;align-content: center;")
-        .card(style="width: 30%" v-for="feature in highlights" :key="feature.title")
+        .card(style="width: 300px" v-for="highlight in highlights" :key="highlight.title")
           .card-image.has-text-centered
-            component(v-if="feature.icon" :is="'icon-'+feature.icon" decorative)
-            component(v-if="feature.subIcon" :is="'icon-'+feature.subIcon" decorative)
+            component(v-if="highlight.icon" :is="'icon-'+highlight.icon" decorative)
+            component(v-if="highlight.subIcon" :is="'icon-'+highlight.subIcon" decorative)
           .card-content
             .content
-              h4 {{ feature.title }}
-              p {{ feature.description }}
+              h4 {{ highlight.title }}
+              p {{ highlight.description }}
               p
-                a.read-more(href='#') Learn more #[icon-read-more(decorative)]
+                g-link.read-more(:to="highlight.path") Learn more #[icon-read-more(decorative)]
       .intro.column.is-8.is-offset-2
         h2.title
           span Perfect for 
@@ -37,15 +37,31 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences }")
         br
         p.subtitle
           | Vel fringilla est ullamcorper eget nulla facilisi. Nulla facilisi nullam vehicula ipsum a. Neque egestas congue quisque egestas diam in arcu cursus.
-    section.container
-      ul
-        li gmail -> nextcloud mail
-        li gmail
-        li gmail
-        li gmail
-        li gmail
-        li gmail
-        li gmail
+    section.section
+      .container.box
+        .tile-is-ancestor
+          .tile.section
+            .has-text-centered
+              h2.title Replace your compromised apps with secure ones that you own
+          .tile.box.level(v-for="prism in prisms" :key="prism.id") 
+            .level-item
+              .subtitle Replace
+            .level-item
+              .button.is-medium.is-light
+                span.icon 
+                  component(:is="'icon-'+prism.icon")
+                span {{ prism.title }}
+                span.icon.is-danger
+                  icon-no-good.is-danger
+            .level-item
+              .subtitle with
+            .level-item
+              .button.is-medium.is-light.is-success
+                span.icon 
+                  component(:is="'icon-'+prism.alternatives[0].icon")
+                span {{ prism.alternatives[0].title }}
+                span.icon
+                  icon-ok
     section.container
       .sandbox
         .tile.is-ancestor

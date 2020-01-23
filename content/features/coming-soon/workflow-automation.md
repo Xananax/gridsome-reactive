@@ -2,6 +2,7 @@
 
 title: Workflow Automation
 audiences: office personal
+icon: feature-workflow-automation
 status: coming
 cover: no-image.png
 upstream:

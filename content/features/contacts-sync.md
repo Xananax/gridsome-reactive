@@ -3,6 +3,7 @@
 title: Contacts Syncing
 audiences: office family personal
 status: stable
+icon: feature-contacts-sync
 upstream:
   name: Nextcloud Contacts
   url: https://github.com/nextcloud/contacts

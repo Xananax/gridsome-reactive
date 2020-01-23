@@ -3,6 +3,7 @@
 title: Phone Tracking
 audiences: journalist activist family personal
 status: stable
+icon: feature-phone-tracking
 upstream:
   name: Phonetrack Nextcloud Application
   url: https://gitlab.com/eneiluj/phonetrack-oc

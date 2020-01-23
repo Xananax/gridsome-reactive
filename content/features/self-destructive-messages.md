@@ -3,6 +3,7 @@
 title: Self Destructing Messages
 audiences: activist
 status: stable
+icon: feature-self-destructive-messages
 upstream:
   name: PrivateBin
   url: https://privatebin.net/

@@ -3,6 +3,7 @@
 title: Mind Map
 audiences: personal
 status: stable
+icon: feature-mind-map
 upstream:
   name: Kityminder Editor
   url: https://github.com/fex-team/kityminder-editor

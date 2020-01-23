@@ -9,9 +9,9 @@ export default {
     Logo
   },
   render() {
-    const { metaInfo, author, menuItems, highlights, audiences } = this
+    const { metaInfo, author, menuItems, highlights, audiences, prisms } = this
     return this.$scopedSlots.default({
-      metaInfo, author, menuItems, highlights, audiences
+      metaInfo, author, menuItems, highlights, audiences, prisms
     })
   },
   metaInfo() {
@@ -77,6 +77,9 @@ export default {
     },
     audiences(){
       return this.$static.audiences.edges.map( ({ node }) => node)
+    },
+    prisms(){
+      return this.$static.prisms.edges.map( ({ node }) => node)
     }
   }
 };
@@ -119,6 +122,7 @@ query {
         icon
         subIcon
         description
+        path
       }
     }
   }
@@ -129,6 +133,21 @@ query {
         id
         title
         path
+      }
+    }
+  }
+  prisms: allPrism(sortBy: "rank", order: ASC) {
+    totalCount
+    edges{
+      node {
+        title
+        icon
+        description
+        alternatives {
+          icon
+          title
+          path
+        }
       }
     }
   }

@@ -3,6 +3,7 @@
 title: SMS Backup
 audiences: personal android
 status: stable
+icon: feature-sms-sync
 upstream:
   name: OwnCloud SMS
   url: https://github.com/nextcloud/ocsms

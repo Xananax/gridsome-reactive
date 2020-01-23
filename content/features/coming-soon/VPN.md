@@ -2,6 +2,7 @@
 
 title: VPN
 audiences: activist personal android ios desktop
+icon: feature-vpn
 status: coming
 cover: no-image.png
 applications:

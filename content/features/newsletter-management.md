@@ -3,6 +3,7 @@
 title: NewsLetter Management
 audiences: activist desktop
 status: stable
+icon: feature-newsletter-management
 upstream:
   name: Mailman
   url: http://www.list.org/

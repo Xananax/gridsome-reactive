@@ -3,6 +3,7 @@
 title: Video Conferencing
 audiences: office family
 status: stable
+icon: feature-video-calls
 upstream: 
   name: Nextcloud Spreed
   url: https://github.com/nextcloud/spreed

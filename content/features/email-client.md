@@ -3,6 +3,7 @@
 title: Email Client
 audiences: office activist family personal
 status: stable
+icon: feature-email-client
 upstream:
   name: RainLoop
   url: https://www.rainloop.net

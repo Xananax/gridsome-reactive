@@ -3,6 +3,7 @@
 title: Streaming Service
 audiences: family personal
 status: coming
+icon: feature-streaming-service
 upstream:
   name: Streama
   url: https://streamaserver.org/

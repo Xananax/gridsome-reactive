@@ -3,6 +3,7 @@
 title: Password Manager
 audiences: family personal activist journalist
 status: stable
+icon: feature-password-manager
 upstream:
   name: Keepass
   url: https://keepass.info/

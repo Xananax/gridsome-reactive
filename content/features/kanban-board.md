@@ -3,6 +3,7 @@
 title: Kanban board
 audiences: office personal
 status: stable
+icon: feature-kanban-board
 upstream:
   name: Deck
   url: https://github.com/nextcloud/deck

@@ -3,6 +3,7 @@
 title: Simple Website publishing
 audiences: activist personal
 status: stable
+icon: feature-simple-website-publishing
 upstream:
   name: Pico CMS
   url: http://picocms.org/

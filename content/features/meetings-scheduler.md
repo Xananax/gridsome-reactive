@@ -3,6 +3,7 @@
 title: Meetings Scheduler
 audiences: office journalist
 status: stable
+icon: feature-meetings-scheduler
 upstream:
   name: Open Sondage
   url: https://demo.yunohost.org/date/

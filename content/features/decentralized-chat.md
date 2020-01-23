@@ -3,6 +3,7 @@
 title: Secure, Decentralized Chat
 audiences: office activist family personal
 status: stable
+icon: feature-decentralized-chat
 upstream:
   name: Synapse
   url: https://github.com/matrix-org/synapse

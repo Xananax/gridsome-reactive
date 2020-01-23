@@ -7,6 +7,7 @@ upstream:
   name: Two Factor TOTP
   url: https://github.com/nextcloud/twofactor_totp
 tags: Markdown
+icon: feature-2fa
 applications:
   - platform: web
     url: https://apps.nextcloud.com/apps/twofactor_totp

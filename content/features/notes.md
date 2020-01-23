@@ -3,6 +3,7 @@
 title: Notes
 audiences: office personal
 status: stable
+icon: feature-notes
 upstream:
   name: Nextcloud Text
   url: https://github.com/nextcloud/text

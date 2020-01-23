@@ -3,6 +3,7 @@
 title: Collaborative Budget Manager
 audiences: family personal
 status: stable
+icon: feature-budget-manager
 upstream:
   name: Cospend
   url: https://gitlab.com/eneiluj/cospend-nc

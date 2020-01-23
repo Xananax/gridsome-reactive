@@ -4,6 +4,7 @@ title: File Storage and Syncing
 audiences: office activists family personal
 status: stable
 tags: Markdown
+icon: feature-file-storage-and-syncing
 upstream: 
   name: NextCloud Files
   url: https://github.com/nextcloud/server

@@ -2,6 +2,7 @@
 
 title: Virtual Android
 audiences: personal activist
+icon: feature-virtual-android
 status: coming
 tags: Markdown
 cover: no-image.png

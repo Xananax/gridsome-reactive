@@ -1,5 +1,6 @@
 <template lang="pug">
   Layout
+    component(:is="'icon-'+item.icon")
     h1 {{ item.title }}
     g-image(
       :alt="item.cover.alt || 'Cover image'"
@@ -49,6 +50,7 @@ export default {
 <page-query>
 query ($id: ID!) {
   feature(id: $id) {
+    icon
     title
     path
     cover (width: 420, blur: 10)

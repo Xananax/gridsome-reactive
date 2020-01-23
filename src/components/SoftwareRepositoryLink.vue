@@ -1,6 +1,6 @@
 <template lang="pug">
-  external-link.software-repository-link(:href="url")
-    component(:is="icon" :title="platform" decorative)
+  external-link.button.software-repository-link(:href="url")
+    component(:is="'icon-'+this.platform" :title="platform" decorative)
     icon-paid(v-if="paid" title="paid application")
     icon-osi(v-if="osi", title="open source application")
     span {{ platform }}
@@ -33,11 +33,6 @@ export default {
     osi:{
       type: Boolean,
       required: false
-    }
-  },
-  computed:{
-    icon(){
-      return getIcon(this.platform)
     }
   }
 }

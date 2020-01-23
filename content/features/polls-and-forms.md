@@ -3,6 +3,7 @@
 title: Polls & Forms
 audiences: office activist
 status: stable
+icon: feature-polls-and-forms
 upstream:
   name: Nextcloud Forms
   url: https://github.com/nextcloud/forms

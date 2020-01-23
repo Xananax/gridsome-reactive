@@ -3,6 +3,7 @@
 title: Automate and Integrate External Services
 audiences: office personal android ios desktop
 status: coming
+icon: feature-services-integration
 upstream:
   name: n8n
   url: https://n8n.io/

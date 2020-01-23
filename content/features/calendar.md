@@ -3,6 +3,7 @@
 title: Calendar
 audiences: office activist family personal
 status: stable
+icon: feature-calendar
 upstream: 
   name: Nextcloud Calendar
   url: https://github.com/nextcloud/calendar/

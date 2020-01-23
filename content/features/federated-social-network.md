@@ -3,6 +3,7 @@
 title: Federated Social Network
 audiences: office activist family personal
 status: stable
+icon: feature-federated-social-network
 upstream:
   name: Nextcloud Social
   url: https://github.com/nextcloud/social

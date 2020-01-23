@@ -1,5 +1,5 @@
 <template lang="pug">
-  g-link.button(:to="path")
+  g-link.button.asset-link(:to="path")
     span.icon
       component(:is="icon")
     span {{ title }}

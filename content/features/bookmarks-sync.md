@@ -3,6 +3,7 @@
 title: Bookmarks Syncing
 audiences: office family personal
 status: stable
+icon: feature-bookmarks-sync
 upstream:
   name: Wallabag
   url: https://github.com/wallabag/wallabag

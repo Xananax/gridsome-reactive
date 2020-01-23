@@ -3,6 +3,7 @@
 title: Maps
 audiences: family personal desktop
 status: stable
+icon: feature-maps
 upstream:
   name: OpenStreetMap
   url: https://www.openstreetmap.org

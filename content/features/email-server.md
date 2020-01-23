@@ -4,6 +4,7 @@
 title: Email Server
 audiences: family personal activist journalist office
 status: stable
+icon: feature-email-server
 upstream:
   name: Cospend
   url: https://gitlab.com/eneiluj/cospend-nc
