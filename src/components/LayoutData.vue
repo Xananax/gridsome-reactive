@@ -140,6 +140,7 @@ query {
     totalCount
     edges{
       node {
+        path
         title
         icon
         description

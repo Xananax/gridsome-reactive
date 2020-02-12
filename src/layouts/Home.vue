@@ -47,7 +47,7 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
             .level-item
               .subtitle Replace
             .level-item
-              .button.is-medium.is-light
+              g-link.button.is-medium.is-light(:to="prism.path")
                 span.icon 
                   component(:is="'icon-'+prism.icon")
                 span {{ prism.title }}
@@ -56,10 +56,19 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
             .level-item
               .subtitle with
             .level-item
-              .button.is-medium.is-light.is-success
+              g-link.button.is-medium.is-light.is-success(:to="prism.alternatives[0].path")
                 span.icon 
                   component(:is="'icon-'+prism.alternatives[0].icon")
                 span {{ prism.alternatives[0].title }}
+                span.icon
+                  icon-ok
+            .level-item
+              .subtitle and
+            .level-item
+              g-link.button.is-medium.is-light.is-success(:to="prism.alternatives[1].path")
+                span.icon 
+                  component(:is="'icon-'+prism.alternatives[1].icon")
+                span {{ prism.alternatives[1].title }}
                 span.icon
                   icon-ok
     section.container

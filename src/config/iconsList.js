@@ -102,3 +102,4 @@ export { default as IconFeatureStreamingService } from 'vue-material-design-icon
 export { default as IconFeatureVirtualAndroid } from 'vue-material-design-icons/ChatProcessing'
 export { default as IconFeatureVpn } from 'vue-material-design-icons/Vpn'
 export { default as IconFeatureWorkflowAutomation } from 'vue-material-design-icons/StateMachine'
+export { default as IconFeatureOffice } from 'vue-material-design-icons/FileDocument'

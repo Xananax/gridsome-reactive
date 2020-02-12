@@ -5,6 +5,7 @@ title: Google Documents
 icon: google-docs
 description: Ut v
 alternatives:
+  - office-suite
   - notes
 
 ---
