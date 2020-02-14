@@ -123,6 +123,7 @@ query {
         subIcon
         description
         path
+        cover
       }
     }
   }

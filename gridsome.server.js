@@ -27,6 +27,7 @@ module.exports = function(api) {
       MarkPage: getMarkdownContentSchema('pages'),
       Feature: getMarkdownContentSchema('features'),
       Audience: getMarkdownContentSchema('audiences'),
+      Highlight: getMarkdownContentSchema('highlights'),
     });
   })
   api.onCreateNode( options => {

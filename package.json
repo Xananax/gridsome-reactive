@@ -17,7 +17,6 @@
     "@gridsome/vue-remark": "^0.1.9",
     "@mdi/font": "^4.8.95",
     "@noxify/gridsome-remark-classes": "^1.0.0",
-    "buefy": "^0.8.9",
     "gridsome": "^0.7.0",
     "gridsome-plugin-feed": "^1.0.2",
     "gridsome-plugin-pug": "^0.0.3",

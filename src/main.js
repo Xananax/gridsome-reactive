@@ -1,4 +1,3 @@
-import Buefy from 'buefy'
 import '~/config/style'
 import * as IconsList from '~/config/iconsList'
 
@@ -10,6 +9,5 @@ export default function(Vue, { router, head, isClient }) {
   Object.keys(IconsList).forEach(name=>{
     Vue.component(name, IconsList[name]);
   })
-  Vue.use(Buefy)
   autoLoad(Vue) 
 }
