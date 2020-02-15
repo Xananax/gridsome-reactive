@@ -17,7 +17,8 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
     Section
         span.tag.is-primary In short
         |  We give you all the tools you need in your life & work, owned by you, stored on your hardware 
-    highlight-summary(v-for="highlight in highlights" :key="highlight.title" v-bind="highlight")
+    Section
+      highlight-summary(v-for="highlight in highlights" :key="highlight.title" v-bind="highlight")
     Section
       h2.title
         span Perfect for 
@@ -26,34 +27,7 @@ layout-data(v-slot="{ metaInfo, author, menuItems, highlights, audiences, prisms
       p.subtitle
         | Vel fringilla est ullamcorper eget nulla facilisi. Nulla facilisi nullam vehicula ipsum a. Neque egestas congue quisque egestas diam in arcu cursus.
     Section
-      .tile.box.level(v-for="prism in prisms" :key="prism.id") 
-        .level-item
-          .subtitle Replace
-        .level-item
-          g-link.button.is-medium.is-light(:to="prism.path")
-            span.icon 
-              component(:is="'icon-'+prism.icon")
-            span {{ prism.title }}
-            span.icon.is-danger
-              icon-no-good.is-danger
-        .level-item
-          .subtitle with
-        .level-item
-          g-link.button.is-medium.is-light.is-success(:to="prism.alternatives[0].path")
-            span.icon 
-              component(:is="'icon-'+prism.alternatives[0].icon")
-            span {{ prism.alternatives[0].title }}
-            span.icon
-              icon-ok
-        .level-item
-          .subtitle and
-        .level-item
-          g-link.button.is-medium.is-light.is-success(:to="prism.alternatives[1].path")
-            span.icon 
-              component(:is="'icon-'+prism.alternatives[1].icon")
-            span {{ prism.alternatives[1].title }}
-            span.icon
-              icon-ok
+      prism-summary(v-for="prism in prisms" :key="prism.id" v-bind="prism") 
     footer.footer
       .container
         .columns
