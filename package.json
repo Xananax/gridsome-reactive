@@ -25,7 +25,7 @@
     "pug": "^3.0.1",
     "rehype-sanitize": "^3.0.0",
     "remark": "^11.0.2",
-    "remark-html": "^10.0.0",
+    "remark-html": "^13.0.2",
     "remark-mermaid": "^0.2.0",
     "remark-toc": "^6.0.0",
     "stylus": "^0.54.7",
